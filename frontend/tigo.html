@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queens-DataGH</title>
+ <style>
+  /***
+ROOT VARIABLE
+*****/
+:root{
+  /***---BACKGROUND COLORS---***/
+  --body-bg-cl-1: rgb(31, 32, 37);
+  --nav-bg-cl-2: rgb(22, 23, 27);
+  --hero-bg-cl-3: #494fcc;
+  --main-section-bg-cl-4: #D3C600;
+  --card-bg-cl-5: #929F33;
+  --card-btn-bg-cl-6: #f06470da;
+  --btn-hover-bg-cl-7: #336B92;
+  --body-bg-cl-8: white;
+  --body-bg-cl-9: white;
+
+  /**--CARD BG--**/
+  --mtn-bgn-cl: rgba(56, 51, 32, 0.288);
+  --tigo-bgn-cl: #336a9209;
+  --tel-bgn-cl: rgba(151, 76, 101, 0.075);
+
+  /***--TEXT SIZES---***/
+  --text-size-ext-small: .8rem;
+  --text-size-small: .9rem;
+  --text-size-mid: 1rem;
+  --text-size-big: 1.1rem;
+  --text-size-large: 1.2rem;
+  --text-size-larger: 1.4rem;
+
+  /**--TEXT COLORS--**/
+  --text-cl-1: rgb(26, 23, 23);
+  --text-cl-2: rgb(39, 27, 11);
+  --text-cl-3: rgb(163, 149, 119);
+
+
+  /*---border background---***/
+  --wht-thin-border-1: rgb(56, 52, 52);
+  --blk-thin-border-2: rgb(94, 59, 8);
+  --ylw-thin-border-3: rgb(214, 100, 7);
+  --rd-thin-border-4: rgb(163, 3, 38);
+  --blu-thin-border-5: #163144;
+
+  /**--HOVER CL--**/
+  --bg-hover-cl: #163144;
+
+
+  /***---border radius---***/
+  --thin-br-1: 4px;
+  --thin-br-2: 8px;
+  --thin-br-3: 12px;
+  --thin-br-4: 16px;
+  --thin-br-5: 24px;
+  --thin-br-6: 32px;
+}
+
+/***--GLOBAL SCOPE---***/
+button:hover{
+  cursor: pointer;
+}
+
+*{
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  background: var(--body-bg-cl-1);
+}
+
+/***----NAVIGATION BAR SECTION---***/
+.navbar-section{
+  width: 100%;
+  max-width: 480px;
+  justify-self: center;;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: .5rem 1rem;
+  justify-content: space-between;
+  background: var(--nav-bg-cl-2);
+  border-bottom: 0.1px solid var(--wht-thin-border-1);
+  z-index: 1000;
+  overflow: hidden;;
+}
+
+.navbar-section .nav-left{
+  width: 100%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: start;
+  align-content: center;
+}
+
+.nav-left img{
+  width: 2.7rem;
+  height: 2.7rem;
+  background-color: rgb(32, 32, 30);
+  border-radius: 50%;
+  border: 0.1px solid var(--blk-thin-border-2);
+  cursor: pointer;
+}
+
+.navbar-section .nav-right{
+  width: 100%;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: end;
+  align-content: center;
+  align-items: center;
+}
+
+.nav-right img{
+  width: 2rem;
+  height: 1.9rem;
+  background-color: rgb(129, 109, 81);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/***----HERO SECTION---***/
+.hero-section{
+  width: 100%;
+  max-width: 480px;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: .7rem;
+  background: var(--nav-bg-cl-2);
+  position: relative;
+  justify-self: center;
+  top: 4.1rem;
+  overflow: hidden;
+  margin-bottom: .5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-end-end-radius: var(--thin-br-1);
+  border-end-start-radius: var(--thin-br-1);
+}
+
+.hero-section .trusted{
+  width: 100%;
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 1rem;
+  gap: .4rem;
+  background-color: rgb(54, 59, 61);
+  color: rgb(206, 200, 200);
+  height: max-content;
+  padding: .4rem .5rem;
+  border-radius: var(--thin-br-1);
+  font-family: Arial;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.trusted img{
+  width: 2.2rem;
+  height: 1.2rem;
+}
+
+.hero-section .cta-text{
+  width: 100%;
+  max-width: max-content;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position:relative;
+}
+
+.cta-text h2{
+  color: white;
+  font-size: var(--text-size-larger);
+  font-weight: 600;
+  font-family: Arial;
+  word-spacing: normal;
+}
+
+.hero-section .queen{
+  width: 100%;
+  max-width: 10rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.queen img{
+  height: 8rem;
+  width: 6rem;
+  border: 0.1px solid var(--wht-thin-border-1);
+  border-radius: 50%;
+}
+
+.hero-section .short-note{
+  width: 100%;
+  max-width: max-content;
+  padding: .2rem .4rem;
+  height: 3rem;
+  align-items: center;
+  position: relative;
+  display: flex;
+  text-align: center;
+}
+
+.short-note p{
+  font-size: var(--text-size-large);
+  color: var(--text-cl-3)
+}
+
+.short-note strong{
+  font-size: var(--text-size-larger);
+  color: #929F33;
+}
+
+/***--NETWORKS--***/
+.networks{
+  display: flex;
+  width: 100%;
+  max-width: 97%;
+  background-color: var(--body-bg-cl-1);
+  height: 3rem;
+  margin-top: .3rem;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border: 0.1px solid var(--wht-thin-border-1);
+  border-end-end-radius: 2rem;
+  border-start-start-radius: 2rem;
+}
+
+.networks .mtn{
+  background: var(--nav-bg-cl-2);
+  display: flex;
+  width: 5rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: rgb(119, 104, 63);
+  font-size: var(--text-size-large); 
+  border-radius: var(--thin-br-4);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 0.1px solid rgb(56, 51, 51);
+}
+
+.networks .tel{
+  background: var(--nav-bg-cl-2);
+  display: flex;
+  width: 5rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: rgb(151, 88, 112);
+  font-size: var(--text-size-large);
+  border-radius: var(--thin-br-4);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 0.1px solid rgb(56, 51, 51);
+}
+
+.networks .tigo{
+  background: var(--nav-bg-cl-2);
+  display: flex;
+  width: 7rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: rgb(119, 140, 148);
+  font-size: var(--text-size-large);
+  border-radius: var(--thin-br-4);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  border: 0.1px solid rgb(56, 51, 51);
+}
+
+/****---MAIN SECTION---****/
+.main-section{
+  width: 100%;
+  max-width: 480px;
+  height: max-content;
+  display: flex;
+  padding: .6rem 0;
+  position: relative;
+  justify-content: center;;
+  gap: 1rem;
+  margin-top: 5rem;
+  justify-self: center;
+}
+
+.main-section .card-container{
+  width: 100%;
+  max-width: 480px;
+  height: max-content;
+  display: grid;
+  justify-self: center;
+  justify-content: center;
+  gap: .7rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: .5rem;
+  position: relative;
+  background-color: var(--body-bg-cl-1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/***--CARD-DIV--**/
+.card-div{
+  width: 14rem;
+  height: 19rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  gap: .4rem;
+  padding: .5rem 0;
+  background:transparent;
+  box-shadow: 2px 2px 6px rgba(19,18,18,0.6), -2px -2px 6px rgba(19, 18, 18, 0.6);
+  border-radius: var(--thin-br-3);
+  border: 0.1px solid var(--wht-thin-border-1);
+  transition: .5s ease-in-out;
+}
+
+.card-div:hover{
+  transform: scale(1.02);
+}
+
+
+
+.card-div-top{
+  width: 94%;
+  height: 60%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+  background: var(--tigo-bgn-cl);
+  border-radius: var(--thin-br-4);
+  box-shadow: 0 2px 6px rgba(10, 10, 10, 0.6);
+}
+
+.card-div-top h2{
+  color: rgb(207, 196, 196);
+  font-size: 1.1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-div-top img{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 30%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+
+
+.card-div-bottom{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: transparent;
+}
+
+.card-div-bottom .package-detail{
+  width: 100%;
+  max-width: 97%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding: .4rem ;
+  background: transparent;
+  border-radius: var(--thin-br-1);
+}
+
+.expiry-date,
+.size,
+.price small{
+  font-size: var(--text-size-large);
+  color: rgb(150, 144, 144);
+}
+
+
+.expiry-date{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expiry-date p{
+  color: var(--text-cl-3);
+}
+
+.size{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.size p{
+  color: var(--text-cl-3);
+}
+
+.price{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .2rem;;
+}
+
+.price p{
+  color: var(--text-cl-3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.buy-btn-div{
+  width: 100%;
+  height: 35%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.buy-btn{
+  width: 90%;
+  height: 60%;
+  border-radius: var(--thin-br-2);
+  border: none;
+  background: var(--btn-hover-bg-cl-7);
+  color: rgb(34, 25, 5);
+  font-weight: 500;
+  font-family: Arial;
+  transition: .1s ease-in-out;
+  text-transform: capitalize;
+}
+
+.buy-btn:hover{
+  background-color:  #3a7fb1;
+  font-weight: 600;
+}
+
+
+</style>
+
+
+
+</head>
+<body>
+  <nav class="navbar-section">
+<div class="nav-left">
+  <img src="./icons/logol (1).png" alt="images" loading="lazy">
+</div>
+<!----middle-->
+<div class="nav-right">
+  <img src="./icons/menu-icon.png" alt="images" loading="lazy">
+</div>
+  </nav>
+  <!---HERO SECTION-->
+  <div class="hero-section">
+    <!---trust badge-->
+    <div class="trusted">
+      <img src="./images/flag3.jpg" alt="images" loading="lazy"> Trusted in Ghana
+    </div>
+    <!--cta-->
+    <div class="cta-text">
+      <h2>Get Connected <br> Today</h2>
+    </div>
+    <!---queen-image-->
+    <div class="queen">
+      <img src="./icons/bg.png" alt="images" loading="lazy">
+    </div>
+    <div class="short-note">
+    <p> Buy all network data bundle on <br><strong>Queens-DataGH</strong></p>
+    </div>
+    <!---network-link-page-ui-->
+    <div class="networks">
+    <a href="index.html"> <div class="mtn">MTN</div></a>
+    <a href="tel.html"> <div class="tel">Telecel</div></a>
+    <a href="tigo.html"> <div class="tigo">AirtelTigo</div></a>
+    </div>
+
+  </div>
+  <!--main-section-->
+  <section class="main-section">
+    <div class="card-container">
+      <!--CARD-1-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>1GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>1 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 7</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="1"
+  data-price="7"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-2-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>2GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>2 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 14</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="2"
+  data-price="13"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-3-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>3GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>3 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 18</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="3"
+  data-price="17"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-4-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>4GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>4 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 22</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="4"
+  data-price="22"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-5-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>5GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>5 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 27</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="5"
+  data-price="26"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-6-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>6GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>6 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 33</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="6"
+  data-price="30"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-7-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>7GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>7 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 37</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="7"
+  data-price="35"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-8-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>8GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>8 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 39</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="8"
+  data-price="39"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-9-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>9GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>9 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 44</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="9"
+  data-price="44"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-10-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>10GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>10 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 47</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="10"
+  data-price="47"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-11-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>12GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>12 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 57</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="12"
+  data-price="57"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-12-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>15GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>15 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 68</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="15"
+  data-price="68"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-13-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>20GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>20 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 90</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="20"
+  data-price="90"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-14-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>25GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>25 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 112</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="25"
+  data-price="110"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-15-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>30GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>30 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 132</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="30"
+  data-price="132"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-16-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>40GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>40 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 170</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="40"
+  data-price="170"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-17-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>AirtelTigo <strong>50GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>60 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>50 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 210</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="at"
+  data-package= "ishare_data_bundle"
+  data-size="50"
+  data-price="210"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <!---status checker-->
+  </section>
+
+  <section class="foot">
+    <p style="text-align:center;color:#696363;border-top: 1px solid rgb(65, 61, 61); font-size:14px;margin-bottom: 0.5rem;padding-bottom:0. 8rem">© 2025 Queens-DataGH. All rights reserved.</p>
+  </section>
+
+
+<!-- Phone Input Modal -->
+<div id="phoneModal" class="modal">
+  <div class="modal-content">
+<!-----SELECTED-->
+      <div class="selected-div">
+    <h4>Selected Package Details</h4>
+    <div class="placeholders-wrapper">
+      <div class="placeholdersbtn-wrapper">
+              <small>Price</small>
+            <div class="placeholders-left"  id="priceTag">
+    </div>
+      </div>
+
+        <div class="placeholdersbtn-wrapper">
+          <small>Network/GB</small>
+            <div class="placeholders-right" id="networkTag">
+    </div>
+        </div>
+    </div>
+  </div>
+    <h3>Enter Bundle Recipient</h3>
+    <input type="tel" id="recipientInput" placeholder="e.g. 0241234567"/>
+    <div class="modal-buttons">
+      <button id="cancelBtn" class="btn cancel">Cancel</button>
+      <button id="confirmBtn" class="btn continue">Proceed to Paystack</button>
+    </div>
+</div>
+</div>
+
+
+<!-- Load Paystack library -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+
+
+
+<script type="module" src="./firebase-config.js"></script>
+
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
