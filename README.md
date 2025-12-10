@@ -1,2 +1,0 @@
-# Queens-DataGH
-Online Store
