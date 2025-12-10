@@ -13,7 +13,7 @@
 </div>
 <!----middle-->
 <div class="nav-right">
-  <img src="./icons/menu-icon.png" alt="images" loading="lazy">
+  <img id="cardToggler" src="./icons/menu-icon.png" alt="images" loading="lazy">
 </div>
   </nav>
   <!---HERO SECTION-->
@@ -650,7 +650,34 @@
 
   </section>
 
+<!------MENU-CARD----->
+<div class="menu-card-container" id="closeCard">
+    
 
+
+       <div class="link">
+       <a href="tel.html">
+        <img src="./icons/icons8-wifi-50.png" alt="image" loading="lazy">
+        <span>Telecel</span>
+       </a>
+      </div>
+
+         
+       <div class="link">
+       <a href="tigo.html">
+        <img src="./icons/icons8-wifi-50.png" alt="image" loading="lazy">
+        <span>AirtelTigo</span>
+       </a>
+      </div>
+
+
+      <div class="menu-ranking-links">
+
+      <!--WHATSAPP GROUP-->
+   
+
+      <a href="login.html">  <button  id="logout-btn" class="logout-btn">Sign-Up</button></a>   
+    </div>
   
 <!-- Phone Input Modal -->
 <div id="phoneModal" class="modal">
@@ -672,12 +699,19 @@
         </div>
     </div>
   </div>
-    <h3>Enter Bundle Recipient</h3>
-    <input type="tel" id="recipientInput" placeholder="e.g. 0241234567"/>
-    <div class="modal-buttons">
-      <button id="cancelBtn" class="btn cancel">Cancel</button>
-      <button id="confirmBtn" class="btn continue">Proceed to Paystack</button>
+    <div class="hintText">
+      <h3>Bundle Recipient</h3>
     </div>
+     <div class="input-image">
+      <input type="tel" id="recipientInput" placeholder="e.g. 0241234567"/>
+    <img src="./icons/icons8-wifi.gif" alt="images"loading="lazy">
+     </div>
+ 
+     <div class="modal-buttons ">
+       <button id="cancelBtn" class="btn cancel">Cancel</button>
+      <button id="confirmBtn" class="btn continue">Purchase</button>
+     </div>
+    
 </div>
 </div>
 
@@ -693,6 +727,30 @@
 
 <script type="module" src="main.js"></script>
 
+
+<!---MENU-CARD-JS-->
+<script>
+  const cardToggler = document.getElementById("cardToggler");
+  const cardCloser = document.getElementById("closeCard");
+
+  // querySelectors //
+  const card = document.querySelector(".menu-card-container");
+
+  // function //
+cardToggler.addEventListener("click", function(e){
+  if (card.style.right != "-500px"){
+    card.style.right = "14px";
+  } else card.style.right = "-500px";
+});
+
+window.addEventListener("click", function(e){
+  if (e.target !== cardToggler && e.target !== card && !card.contains(e.target)){
+    card.style.right = "-500px";
+  }
+});
+
+
+</script>
 
 </body>
 </html>

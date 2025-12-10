@@ -5,6 +5,318 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Queens-DataGH</title>
  <style>
+
+      /**
+    * SNACKBAR
+    **/
+    /***
+SNACKBAR SECTION
+****/
+.snackbar {
+  position: fixed;
+  top: 1rem;
+  right: 50%;
+  width: 100%;
+  height: 3rem;
+  max-width: 300px;
+  transform: translateX(50%);
+  background-color:  #114435e3;
+  color: rgb(23, 182, 174);
+  text-align: start;
+  display: flex;
+  align-items: center;
+  word-spacing: 2.7;
+  justify-content: start;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border: 1px solid rgb(0, 255, 242);
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  box-shadow: 0 2px 6px rgba(98, 126, 118, 0.849), 0 -2px 6px  rgba(25, 31, 29, 0.849) ;
+  z-index: 2000000; /* above input popup */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s ease, transform 0.3s ease;
+}
+
+.snackbar.show {
+  opacity: 1;
+  transform: translateX(50%) translateY(10px);
+  pointer-events:all;
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-cl);
+}
+
+
+/****-----PHONE INPUT MODAL-------------****/
+/* ===== MODAL STYLING ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  z-index: 9999;
+}
+
+.selected-div{
+  display: flex;
+  width: 100%;
+  height: 10rem;
+  max-width: 350px;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .5rem;
+  background: var(--nav-bg-cl-2);
+
+  border: 2px solid var(--wht-thin-border-1);
+  border-radius: var(--thin-br-2);
+  box-shadow: 0 2px 6px rgba(34, 33, 33, 0.8);
+}
+
+.selected-div h4{
+  color: rgb(201, 196, 196);
+  font-size: 1.3rem;
+  font-weight: 600;
+  width: 100%;
+  max-width: 30%;
+  font-family: serif;
+  background: rgba(206, 180, 151, 0.164);
+  padding: .5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(44, 38, 31, 0.3);
+
+}
+
+.placeholders-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding: .5rem;;
+}
+
+.placeholdersbtn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: max-content;
+  height: 4rem;
+  flex-direction: column;
+}
+
+.placeholdersbtn-wrapper small{
+  font-size: 1.1rem;
+  color: rgb(129, 124, 124);
+  margin-bottom: .2rem;
+}
+
+.placeholders-left{
+  display: flex;
+  width: 100%;
+  max-width: 25%;
+  height: 2rem;
+  padding: .2rem .4rem;
+  font-size: 1rem;
+  font-family: serif;
+  font-weight: 600;
+  max-width: 120px;
+  align-items: center;
+  justify-content: center;
+  right: 1rem;
+  background: rgba(226, 221, 221, 0.507);
+  border: 0.1px solid rgb(177, 164, 153);
+  border-radius: var(--thin-br-1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+}
+
+.placeholders-right{
+  display: flex;
+  width: 100%;
+  max-width: 35%;
+  height: 2rem;
+  padding: .2rem .4rem;
+  font-size: 1rem;
+  font-family: serif;
+  font-weight: 600;
+  max-width: 160px;
+  align-items: center;
+  justify-content: center;
+  left: 1rem;
+  background: rgba(226, 223, 223, 0.507);
+  border: 0.1px solid rgb(177, 170, 165);
+  border-radius: var(--thin-br-1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal.show {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--body-bg-cl-1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-radius: 12px;
+  width: 100%;
+  gap: .5rem;
+  height: 26rem;
+  max-width: 370px;
+  box-shadow: 0 10px 25px rgba(107, 105, 105, 0.3);
+  text-align: center;
+  animation: popUp 0.3s ease;
+  border: 1px solid rgba(134, 133, 131, 0.774);
+}
+
+.hintText{
+width: 100%;
+height: max-content;
+padding: .2rem;
+align-items: center;
+justify-content: start;
+}
+
+.hintText h3 {
+  font-size: 1rem;
+  color: rgb(129, 124, 124);
+  margin-bottom: -.4rem;
+  margin-left: .5rem;
+  text-align: start;
+  justify-self: start;
+  font-family: Arial;
+  font-weight: 500;
+}
+
+.input-image{
+  width: 100%;
+  max-width: 94%;
+  height: max-content;
+  padding: .2rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.input-image img{
+  align-self: center;
+  margin-bottom: 1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: var(--thin-br-2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-image input {
+  width: 100%;
+  max-width: 290px;
+  height: 3rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  justify-self: start;
+  padding: 8px;
+  color: rgb(223, 216, 216);
+  border: 1px solid rgb(68, 66, 66);
+  border-radius: var(--thin-br-1);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-right: 3.7rem;
+  background: var(--body-bg-cl-1);
+  transition: border 0.3s ease;
+}
+
+.input-image input::placeholder{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.modal-content input:focus {
+  border: 0.1px solid var(--wht-thin-border-1);
+  outline: none;
+}
+
+.modal-buttons {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  height: 5rem;
+  background-color: rgba(59, 56, 56, 0.253);
+  border-radius: 6px;
+  padding: .9rem 1.1rem;
+  align-items: center;
+  border: 2px solid var(--thin-border);
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  gap: 1.5rem;
+}
+
+.modal-buttons .btn {
+  flex: 1;
+  padding: 10px;
+  width: max-content;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  border: 0.1px solid rgb(139, 135, 135);
+  font-size: 0.90rem;
+}
+
+.modal-buttons .cancel {
+  width: 100%;
+  max-width: 150px;
+  height: 2.4rem;
+  background: #726f6f;
+  font-size: 1.08rem;
+  font-family: Arial;
+  color: var(--text-cl-2);
+  border: 1px solid var(--text-cl-3);
+  box-shadow:  0 2px 6px rgba(66, 65, 65, 0.2);
+}
+
+.modal-buttons .continue {
+  width: 100%;
+  max-width: 150px;
+  padding: 0 .8rem;
+  height: 2.8rem;
+  display: flex;
+  border: 2px solid var(--thin-border-1);
+  align-items: center;
+  justify-content: center;
+  background: #087c69;
+  font-size: 1.2rem;
+  font-family: Arial;
+  color: wheat;
+  box-shadow:  0 2px 6px rgba(70, 69, 69, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1);opacity:1;}
+}
+/****-----PHONE INPUT MODAL--ENDS--****/
+
   /***
 ROOT VARIABLE
 *****/
@@ -1130,12 +1442,19 @@ body{
         </div>
     </div>
   </div>
-    <h3>Enter Bundle Recipient</h3>
-    <input type="tel" id="recipientInput" placeholder="e.g. 0241234567"/>
-    <div class="modal-buttons">
-      <button id="cancelBtn" class="btn cancel">Cancel</button>
-      <button id="confirmBtn" class="btn continue">Proceed to Paystack</button>
+    <div class="hintText">
+      <h3>Bundle Recipient</h3>
     </div>
+     <div class="input-image">
+      <input type="tel" id="recipientInput" placeholder="e.g. 0241234567"/>
+    <img src="./icons/icons8-wifi.gif" alt="images"loading="lazy">
+     </div>
+ 
+     <div class="modal-buttons ">
+       <button id="cancelBtn" class="btn cancel">Cancel</button>
+      <button id="confirmBtn" class="btn continue">Purchase</button>
+     </div>
+    
 </div>
 </div>
 

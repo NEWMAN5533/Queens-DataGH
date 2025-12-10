@@ -90,13 +90,13 @@ async function payWithPaystack(network, recipient, packageName, size, price) {
   }
 
   // ✅ Collect user details
-  const userEmail = user?.email || `${recipient}@ecodata.com`;
+  const userEmail = user?.email || `${recipient}@Queens-DataGH.com`;
   const userName = user?.displayName || "Guest User";
   const userPhone = recipient;
 
   // ✅ Initialize Paystack
   let handler = PaystackPop.setup({
-    key: "pk_live_635856447ee14b583349141b7271f64c9b969749",
+    key: "pk_live_7b3c508d63232d846a0bdea41a36668d4ff4dea7",
     email: userEmail,
     amount: price * 100,
     currency: "GHS",
@@ -180,7 +180,7 @@ async function orderBundle(network, recipient, packageName, size, reference) {
   try {
     const API_BASE =
       window.location.hostname === "localhost"
-        ? "http://localhost:3000"
+        ? "http://localhost:5000"
         : "https://ecodata-app.onrender.com";
 
     // ✅ Build query string for GET request
@@ -484,10 +484,10 @@ function showSnackBar(message, type = "info") {
   snackbar.className = "snackbar";
 
   // Color scheme based on type
-  if (type === "success") snackbar.style.background = "#7adabaff";   // green
+  if (type === "success") snackbar.style.background = "#154b3b83";   // green
   else if (type === "error") snackbar.style.background = "#dc3545"; // red
   else if (type === "warning") snackbar.style.background = "#ffc107"; // yellow
-  else snackbar.style.background = "#beddca"; // default dark
+  else snackbar.style.background = "#1e4e42e1"; // default dark
 
   snackbar.textContent = message;
 
@@ -504,5 +504,5 @@ function showSnackBar(message, type = "info") {
   setTimeout(() => {
     snackbar.classList.remove("show");
     setTimeout(() => snackbar.remove(), 500);
-},5000);
+},2000);
 };
