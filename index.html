@@ -319,12 +319,9 @@ justify-content: start;
     </div>
     <!---NAMEdISPLAY-SECTION-->
       <p id="usernameDisplay"></p>
-      <div class="user-info">
-        <span id="usernameDisplay"></span>
-      </div>
     <!----name-display-ends-->
     <div class="short-note">
-    <p> Buy all MTN data bundle for multiple or single <br>recipient on:<br><strong>Queens-DataGH</strong></p>
+    <p> Buy all MTN data bundle for multiple or single <br>recipient on <br><strong> Queens-DataGH</strong></p>
     </div>
     <!---network-link-page-ui-->
     <div class="networks">
@@ -1024,6 +1021,44 @@ justify-content: start;
 
 <script type="module" src="./main.js"></script>
 
+
+<!---usernameDisplay----->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+ // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCWEv4OxX-nAN_Uo8gsIcGY6qWetjcVfeo",
+  authDomain: "queens-b53e4.firebaseapp.com",
+  projectId: "queens-b53e4",
+  storageBucket: "queens-b53e4.firebasestorage.app",
+  messagingSenderId: "212342928088",
+  appId: "1:212342928088:web:01512961fe10ac3a0cddad"
+};
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  onAuthStateChanged(auth, async (user) => {
+    const usernameDisplay = document.getElementById("usernameDisplay");
+
+// FORCE TO LOGIN THE USER //
+  
+
+
+
+
+    if (user) {
+      const userSnap = await getDoc(doc(db, "users", user.uid));
+      usernameDisplay.textContent = `Welcome Back on Queens-DataGH, ${userSnap.data().username}!`;
+    } else {
+      usernameDisplay.textContent = "Welcome Back, Guest!";
+    }
+});
+</script>
 
 <!---MENU-CARD-JS-->
 
