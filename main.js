@@ -14,9 +14,9 @@ import {
 const API_BASE = (() => {
   // use current host in prod or localhost for local dev
   if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-    return "http://localhost:3000";
+    return "http://localhost:5000";
   }
-  return "https://ecodata-app.onrender.com"; // your deployed backend
+ // return "https://ecodata-app.onrender.com"; // your deployed backend
 })();
 
 

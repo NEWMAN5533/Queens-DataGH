@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Queens-DataGH</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
+
+ 
 </head>
 <body>
   <nav class="navbar-section">
@@ -13,23 +15,32 @@
 </div>
 <!----middle-->
 <div class="nav-right">
-  <img id="cardToggler" src="./icons/menu-icon.png" alt="images" loading="lazy">
+  <div class="btn-sign">
+    <a href="login.html">
+      <button class="login">
+      Sign Up
+    </button>
+    </a>
+  </div>
 </div>
   </nav>
   <!---HERO SECTION-->
   <div class="hero-section">
     <!---trust badge-->
     <div class="trusted">
-      <img src="./images/flag3.jpg" alt="images" loading="lazy"> Trusted in Ghana
+      <img src="./images/flag3.jpg" alt="images" loading="lazy">No.1 Trusted Cheap Bundles Agent Shop in  Ghana
     </div>
     <!--cta-->
     <div class="cta-text">
-      <h2>Get Connected <br> Today</h2>
+      <h2>Get Connected Today</h2>
     </div>
     <!---queen-image-->
     <div class="queen">
       <img src="./icons/bg.png" alt="images" loading="lazy">
     </div>
+    <!---NAMEdISPLAY-SECTION-->
+    <p class="userName" id="usernameDisplay"></p>
+    <!----name-display-ends-->
     <div class="short-note">
     <p> Buy all network data bundle on <br><strong>Queens-DataGH</strong></p>
     </div>
@@ -39,8 +50,39 @@
     <a href="tel.html"> <div class="tel">Telecel</div></a>
     <a href="tigo.html"> <div class="tigo">AirtelTigo</div></a>
     </div>
-
   </div>
+
+<!----ORDER STATUS-SECTION---->
+<div class="order-status-container">
+  
+<div class="right-side">
+  <div class="right-side-top">
+    <div class="status-result" id="statusResult"></div>
+  </div>
+  <div class="right-side-btm">
+   <small>Check Live Status with <strong>Order ID</strong></small>
+  </div>
+  
+</div>
+
+<div class="left-side">
+   <section class="order-status-section">
+  <h2>Check Order Status</h2>
+  <span><img src="./icons/icons8-wifi.gif" alt="image" loading="lazy"></span>
+  <input type="text" id="orderInput" placeholder="Enter Order ID">
+  <button class="checkBt" id="checkBtn">Check Status</button>
+  
+</section>
+  </div>
+
+
+</div>
+
+
+
+
+
+
   <!--main-section-->
   <section class="main-section">
     <div class="card-container">
@@ -717,6 +759,7 @@
 
 
 
+
 <!-- Load Paystack library -->
   <script src="https://js.paystack.co/v1/inline.js"></script>
 
@@ -725,32 +768,11 @@
 
 <script type="module" src="./firebase-config.js"></script>
 
-<script type="module" src="main.js"></script>
+<script type="module" src="./main.js"></script>
 
 
 <!---MENU-CARD-JS-->
-<script>
-  const cardToggler = document.getElementById("cardToggler");
-  const cardCloser = document.getElementById("closeCard");
 
-  // querySelectors //
-  const card = document.querySelector(".menu-card-container");
-
-  // function //
-cardToggler.addEventListener("click", function(e){
-  if (card.style.right != "-500px"){
-    card.style.right = "14px";
-  } else card.style.right = "-500px";
-});
-
-window.addEventListener("click", function(e){
-  if (e.target !== cardToggler && e.target !== card && !card.contains(e.target)){
-    card.style.right = "-500px";
-  }
-});
-
-
-</script>
 
 </body>
 </html>
