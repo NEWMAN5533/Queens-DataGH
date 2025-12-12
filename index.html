@@ -6,7 +6,278 @@
   <title>Queens-DataGH</title>
   <link rel="stylesheet" href="./style.css">
 
- 
+ <style>
+  
+/****-----PHONE INPUT MODAL-------------****/
+/*===== MODAL STYLING =====*/
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  z-index: 9999;
+}
+
+.selected-div{
+  display: flex;
+  width: 100%;
+  height: 10rem;
+  max-width: 350px;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .5rem;
+  background: var(--nav-bg-cl-2);
+
+  border: 2px solid var(--wht-thin-border-1);
+  border-radius: var(--thin-br-2);
+  box-shadow: 0 2px 6px rgba(34, 33, 33, 0.8);
+}
+
+.selected-div h4{
+  color: rgb(201, 196, 196);
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 30%;
+  font-family: serif;
+  background: rgba(206, 180, 151, 0.164);
+  padding: .5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(44, 38, 31, 0.5);
+
+}
+
+.placeholders-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding: .3rem;;
+}
+
+.placeholdersbtn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: max-content;
+  height: 5rem;
+  flex-direction: column;
+}
+
+.placeholdersbtn-wrapper small{
+  font-size: 1.1rem;
+  color: rgb(129, 124, 124);
+  margin-bottom: .2rem;
+}
+
+.placeholders-left{
+  display: flex;
+  width: 100%;
+  max-width: 25%;
+  height: 2rem;
+  padding: .2rem .4rem;
+  font-size: 1rem;
+  font-family: serif;
+  font-weight: 600;
+  max-width: 120px;
+  align-items: center;
+  justify-content: center;
+  right: 1rem;
+  background: rgba(158, 156, 156, 0.507);
+  border: 0.1px solid rgb(177, 164, 153);
+  border-radius: var(--thin-br-1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+}
+
+.placeholders-right{
+  display: flex;
+  width: 100%;
+  max-width: 35%;
+  height: 2rem;
+  padding: .2rem .4rem;
+  font-size: 1rem;
+  font-family: serif;
+  font-weight: 600;
+  max-width: 160px;
+  align-items: center;
+  justify-content: center;
+  left: 1rem;
+  background: rgba(143, 140, 140, 0.507);
+  border: 0.1px solid rgb(177, 170, 165);
+  border-radius: var(--thin-br-1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal.show {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--body-bg-cl-1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-radius: 12px;
+  width: 100%;
+  gap: .5rem;
+  height: 26rem;
+  max-width: 420px;
+  box-shadow: 0 10px 25px rgba(107, 105, 105, 0.3);
+  text-align: center;
+  animation: popUp 0.3s ease;
+  border: 1px solid rgba(63, 60, 57, 0.774);
+}
+
+.hintText{
+width: 100%;
+height: max-content;
+padding: .2rem;
+align-items: center;
+justify-content: start;
+}
+
+.hintText h3 {
+  font-size: 1rem;
+  color: rgb(129, 124, 124);
+  margin-bottom: -.4rem;
+  margin-left: .5rem;
+  text-align: start;
+  justify-self: start;
+  font-family: Arial;
+  font-weight: 500;
+}
+
+.input-image{
+  width: 100%;
+  max-width: 94%;
+  height: max-content;
+  padding: .2rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.input-image img{
+  align-self: center;
+  margin-bottom: 1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: var(--thin-br-2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-image input {
+  width: 100%;
+  max-width: 290px;
+  height: 3rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  justify-self: start;
+  padding: 8px;
+  color: rgb(223, 216, 216);
+  border: 1px solid rgb(68, 66, 66);
+  border-radius: var(--thin-br-1);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-right: 3.7rem;
+  background: var(--body-bg-cl-1);
+  transition: border 0.3s ease;
+}
+
+.input-image input::placeholder{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.modal-content input:focus {
+  border: 0.1px solid var(--wht-thin-border-1);
+  outline: none;
+}
+
+.modal-buttons {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  height: 5rem;
+  background-color: rgba(59, 56, 56, 0.253);
+  border-radius: 6px;
+  padding: .9rem 1.1rem;
+  align-items: center;
+  border: 2px solid var(--thin-border);
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  gap: 1.5rem;
+}
+
+.modal-buttons .btn {
+  flex: 1;
+  padding: 10px;
+  width: max-content;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  border: 0.1px solid rgb(139, 135, 135);
+  font-size: 0.90rem;
+}
+
+.modal-buttons .cancel {
+  width: 100%;
+  max-width: 150px;
+  height: 2.4rem;
+  background: #726f6f;
+  font-size: 1.08rem;
+  font-family: Arial;
+  color: var(--text-cl-2);
+  border: 1px solid var(--text-cl-3);
+  box-shadow:  0 2px 6px rgba(66, 65, 65, 0.2);
+}
+
+.modal-buttons .continue {
+  width: 100%;
+  max-width: 150px;
+  padding: 0 .8rem;
+  height: 2.8rem;
+  display: flex;
+  border: 2px solid var(--thin-border-1);
+  align-items: center;
+  justify-content: center;
+  background: #087c69;
+  font-size: 1.2rem;
+  font-family: Arial;
+  color: wheat;
+  box-shadow:  0 2px 6px rgba(70, 69, 69, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1);opacity:1;}
+}
+
+
+ </style>
+
+
 </head>
 <body>
   <nav class="navbar-section">
@@ -692,35 +963,9 @@
 
   </section>
 
-<!------MENU-CARD----->
-<div class="menu-card-container" id="closeCard">
-    
 
 
-       <div class="link">
-       <a href="tel.html">
-        <img src="./icons/icons8-wifi-50.png" alt="image" loading="lazy">
-        <span>Telecel</span>
-       </a>
-      </div>
 
-         
-       <div class="link">
-       <a href="tigo.html">
-        <img src="./icons/icons8-wifi-50.png" alt="image" loading="lazy">
-        <span>AirtelTigo</span>
-       </a>
-      </div>
-
-
-      <div class="menu-ranking-links">
-
-      <!--WHATSAPP GROUP-->
-   
-
-      <a href="login.html">  <button  id="logout-btn" class="logout-btn">Sign-Up</button></a>   
-    </div>
-  
 <!-- Phone Input Modal -->
 <div id="phoneModal" class="modal">
   <div class="modal-content">
@@ -756,8 +1001,6 @@
     
 </div>
 </div>
-
-
 
 
 <!-- Load Paystack library -->
