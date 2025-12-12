@@ -6,6 +6,25 @@
   <title>Queens-DataGH</title>
  <style>
 
+.user-info{
+  display: flex;
+  height: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size:1.1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+
+.user-info span{
+ font-size:1.1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+
+
+
       /**
     * SNACKBAR
     **/
@@ -454,7 +473,7 @@ body{
 .hero-section{
   width: 100%;
   max-width: 480px;
-  height: 26.4rem;
+  height: 28.4rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -536,6 +555,7 @@ body{
   position: relative;
   display: flex;
   text-align: center;
+  margin-bottom: .5rem;
 }
 
 .short-note p{
@@ -565,8 +585,8 @@ body{
 .networks .mtn{
   background: var(--nav-bg-cl-2);
   display: flex;
-  width: 5rem;
-  height: 2rem;
+  width: 7rem;
+  height: 2.1rem;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -582,8 +602,8 @@ body{
 .networks .tel{
   background: var(--nav-bg-cl-2);
   display: flex;
-  width: 5rem;
-  height: 2rem;
+  width: 7rem;
+  height: 2.1rem;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -600,7 +620,7 @@ body{
   background: var(--nav-bg-cl-2);
   display: flex;
   width: 7rem;
-  height: 2rem;
+  height: 2.1rem;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -831,11 +851,14 @@ body{
     <div class="queen">
       <img src="./icons/bg.png" alt="images" loading="lazy">
     </div>
-     <!---NAMEdISPLAY-SECTION-->
-    <p class="userName" id="usernameDisplay"></p>
+   <!---NAMEdISPLAY-SECTION-->
+      <p id="usernameDisplay"></p>
+      <div class="user-info">
+        <span id="usernameDisplay"></span>
+      </div>
     <!----name-display-ends-->
     <div class="short-note">
-    <p> Buy all network data bundle on <br><strong>Queens-DataGH</strong></p>
+    <p> Buy all your AirtelTigo data bundle for multiple or single <br>recipient on:<br><strong>Queens-DataGH</strong></p>
     </div>
      
     <!---network-link-page-ui-->
