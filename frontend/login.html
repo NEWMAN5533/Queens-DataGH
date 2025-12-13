@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Queens-DataGH</title>
+  <style>
+
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    
+
+:root {
+  --bg-cl: #FFF;
+  --primary-cl: #fff;
+  --secondary-cl: rgb(50, 50, 190);
+  --dark-cl: #0a0a0a;
+  --ascent-cl: rgb(158, 97, 209);
+  --background-cl: #e6e8ce;
+  --card-full-bg-cl: rgb(255, 217, 0);
+  --card-full-tele-bg-cl: rgb(221, 19, 19);
+  --card-full-airtel-bg-cl:  rgb(6, 6, 231);
+  --border-cl-2: rgba(66, 66, 26, 0.226);
+  --mtn-btn: rgb(193, 196, 19);
+  --telecel-btn: rgb(180, 57, 19);
+  --airteltigo-btn: rgb(28, 46, 119);
+}
+
+
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url(./icons/bg.png);
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      width: 100%;
+      margin: 0;
+      justify-self: center;
+      padding: 0;
+      height: max-content;
+      overflow-y: auto;
+    }
+
+    /**
+* NAVIGATION BAR
+**/
+.navbar {
+  display: flex;
+  width: 100%;
+  max-width: 480px;
+  justify-self: center;
+  height: 3.8rem;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-cl);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: .5rem 1.2rem;
+  z-index: 1000;
+}
+
+/**
+* NAV LEFT
+**/
+.navbar .nav-left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.nav-left img{
+  width: 5.4rem;
+  height: 5.4rem;
+  background-color: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+
+/**
+* NAV-RIGHT
+**/
+.nav-right{
+  display: flex;
+  width: 6rem;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  padding: 0 .2rem;
+}
+
+.nav-right img{
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  justify-content: space-between;
+}
+
+.login a{
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .8rem;
+  color: var(--card-full-bg-cl);
+}
+
+
+.login img {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0 .5rem;
+  background: var(--background-cl);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menu-icon{
+  background: rgba(219, 214, 214, 0.37);
+  border-radius: 4px;
+  padding: .3px;
+  margin-right: 1rem;
+}
+
+
+.eye-icon{
+  position: absolute;
+  right: 50px;
+  top: 56%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+  color: #777;
+}
+
+
+
+
+    .container {
+      background: transparent;
+      border: 0.1px solid var(--background-cl);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(88, 87, 87, 0.3);
+      width: 100%;
+      height: 30rem;
+      gap: 2rem;
+      max-width: 480px;
+      margin: 150px auto;
+      display: flex;
+      position: relative;
+      justify-self: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      max-width: 400px;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 90%;
+      gap: 1.4rem
+    }
+    h2 {
+      text-align: center;
+      color: #272424;
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      padding: 16px;
+      margin-top: 30px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #0d8a45f5;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: .5s ease;
+    }
+    button:hover {
+      background: #0b9661;
+    }
+    p {
+      text-align: center;
+      margin-top: 1rem;
+      background: rgba(43, 42, 42, 0.226);
+      padding: .2em;
+      border-radius: 3px;
+      color: rgb(216, 221, 223);
+      border: 0.1px solid var(--background-cl);
+    }
+    a {
+      color: #682905;
+      text-decoration: underline;
+      padding: .3rem;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      margin: 0 -0.1rem;
+    }
+
+    
+/* ABOUT & FOOTER */
+.about,
+footer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-self: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+  max-width: 480px;
+  text-align: center;
+  color: white;
+  background-color:  rgb(0, 0, 0) ;
+  bottom: 0;
+}
+
+.about{
+  border-block-end: 1px solid var(--ascent-cl);
+}
+
+section footer .bar{
+  margin: 0;
+  bottom: 0;
+}
+.about h3{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--background-cl);
+}
+.about h4{
+  color: rgb(45, 182, 148);
+  margin-top: 0.4rem;
+  font-size: 1.8rem;
+}
+.about P{
+  width: 90%;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgb(250,250,250);
+  margin: 0 auto;
+  line-height: 1.8rem;
+}
+
+.about img{
+  border-radius: 2rem;
+width: 1.2rem;
+height: 1.2rem;
+margin: 0 .5rem;
+}
+
+@keyframes jump {
+ 0% {
+  transform: rotateY('90deg 10%');
+ }
+}
+
+
+
+footer a{
+  color:  #eef3f0;
+  text-decoration: none;
+  align-items: center;
+  font-weight: bold;
+  margin-left: 0.1rem;
+}
+
+footer .copyright{
+  color:  rgb(206, 58, 78);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: max-content;
+  position: relative;
+}
+
+
+
+footer img{
+  width: 2.6rem;
+  height: 2.6rem;
+  vertical-align: middle;
+  margin-left: 0.6rem;
+}
+
+
+    /**
+    * SNACKBAR
+    **/
+    /***
+SNACKBAR SECTION
+****/
+.snackbar {
+  position: fixed;
+  top: 1rem;
+  right: 50%;
+  width: 100%;
+  height: 3rem;
+  max-width: 420px;
+  transform: translateX(50%);
+  background-color:  #beddca;
+  color: rgb(41, 44, 42);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  word-spacing: 2.7;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+  box-shadow: 0 2px 6px rgba(98, 126, 118, 0.849), 0 -2px 6px  rgba(98, 126, 121, 0.849) ;
+  z-index: 2000000; /* above input popup */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s ease, transform 0.3s ease;
+}
+
+.snackbar.show {
+  opacity: 1;
+  transform: translateX(50%) translateY(10px);
+  pointer-events:all;
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-cl);
+}
+
+
+
+@media (min-width: 1440px) {
+  .navbar{
+    width: 100vw;
+    max-width: 100%;
+    padding: .5rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar{
+    width: 100vw;
+    max-width: 100%;
+    padding: .5rem 1rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .navbar{
+    width: 100vw;
+    max-width: 100%;
+    padding: .5rem 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-----NAVIGATION- BAR-->
+  
+<nav class="navbar">
+<div class="nav-left">
+ <a href="index.html">
+  <img src="./icons/logol (1).png" alt="image" loading="lazy"></a>
+</div>
+
+
+</nav>
+
+  <div class="container">
+    <h2>Welcome Back! <br> Login to Your Account</h2>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <span id="togglePassword" class="eye-icon">👁</span>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don’t have an account? <a href="signUp.html">Sign Up</a></p>
+  </div>
+
+ 
+<!----SNACKBAR-SECTION----->
+  
+
+  <!-- Firebase Core -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+  // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCWEv4OxX-nAN_Uo8gsIcGY6qWetjcVfeo",
+  authDomain: "queens-b53e4.firebaseapp.com",
+  projectId: "queens-b53e4",
+  storageBucket: "queens-b53e4.firebasestorage.app",
+  messagingSenderId: "212342928088",
+  appId: "1:212342928088:web:01512961fe10ac3a0cddad"
+};
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+onAuthStateChanged(auth, (user) => {
+  const usernameDisplay = document.getElementById("usernameDisplay");
+  if (!usernameDisplay) return;
+
+  if (user) {
+    const displayName = user.displayName || "User";
+    usernameDisplay.textContent = `Welcome, ${displayName}!`;
+  } else {
+    usernameDisplay.textContent = "Welcome, Guest!";
+  }
+});
+
+    const loginForm = document.getElementById("login-form");
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+          const username = userDoc.data().username;
+          localStorage.setItem("username", username);
+        }
+
+        showSnackBar("Login successful!");
+        window.location.href = "index.html";
+      } catch (error) {
+        showSnackBar(error.message);
+      }
+    });
+  </script>
+  <!----SNACKBAR-SECTION--->
+  <script>
+// SNACKBAR SECTION //
+// ===== SNACKBAR FUNCTION ===== //
+function showSnackBar(message, type = "info") {
+  // Remove existing snackbar if visible
+  const existing = document.querySelector(".snackbar");
+  if (existing) existing.remove();
+
+  // Create snackbar element
+  const snackbar = document.createElement("div");
+  snackbar.className = "snackbar";
+
+  // Color scheme based on type
+  if (type === "success") snackbar.style.background = "#28a745";   // green
+  else if (type === "error") snackbar.style.background = "#dc3545"; // red
+  else if (type === "warning") snackbar.style.background = "#ffc107"; // yellow
+  else snackbar.style.background = "#aaf1c6ff"; // default dark
+
+  snackbar.textContent = message;
+
+  // Add snackbar to the body
+  document.body.appendChild(snackbar);
+
+  // Force reflow (to trigger CSS animation)
+  void snackbar.offsetWidth;
+
+  // Show snackbar
+  snackbar.classList.add("show");
+
+  // Hide snackbar after 3 seconds
+  setTimeout(() => {
+    snackbar.classList.remove("show");
+    setTimeout(() => snackbar.remove(), 500);
+},4000);
+}
+  </script>
+
+
+    <!----TOGGLE EYE ICON--JS---->
+  <script>
+    const togglePassword = document.getElementById("togglePassword");
+const passwordField = document.getElementById("password");
+
+togglePassword.addEventListener("click", () => {
+  const type = passwordField.type === "password" ? "text" : "password";
+  passwordField.type = type;
+  togglePassword.textContent = type === "password" ? "👁":"🙈";
+});
+  </script>
+
+
+  <div id="snackbar"></div>
+</body>
+</html>

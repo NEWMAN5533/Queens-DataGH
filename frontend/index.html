@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!----META-LINKS---->
+    <link rel="shortcut icon" href="./icons/logol (1).png" type="image/png">
+
+  <meta name="title" content="Queens-DataGH">
+  <meta name="description" content="Queens-DataGH is No.1 trusted agent website for buying all affordable data bundles for MTN, Telecel & AirtelTigo with Fast delivery,and Secure Payment. Shop affordable data packages for browsing, streaming, and more on Queens-DataGH">
+
+
+  <!---META-LINGS--ENDS-->
+  <title>Queens-DataGH</title>
+  <link rel="stylesheet" href="./style.css">
+
+ <style>
+  
+/****-----PHONE INPUT MODAL-------------****/
+/*===== MODAL STYLING =====*/
+
+.user-info{
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1.8rem;
+  padding: .1rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.user-info p{
+  font-size: 1.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  color: rgb(226, 218, 218);
+  text-align:center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  z-index: 9999;
+}
+
+.selected-div{
+  display: flex;
+  width: 100%;
+  height: 10rem;
+  max-width: 350px;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .5rem;
+  background: var(--nav-bg-cl-2);
+
+  border: 2px solid var(--wht-thin-border-1);
+  border-radius: var(--thin-br-2);
+  box-shadow: 0 2px 6px rgba(34, 33, 33, 0.8);
+}
+
+.selected-div h4{
+  color: rgb(201, 196, 196);
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 30%;
+  font-family: serif;
+  background: rgba(206, 180, 151, 0.164);
+  padding: .5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(44, 38, 31, 0.5);
+
+}
+
+.placeholders-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding: .3rem;;
+}
+
+.placeholdersbtn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: max-content;
+  height: 5rem;
+  flex-direction: column;
+}
+
+.placeholdersbtn-wrapper small{
+  font-size: 1.1rem;
+  color: rgb(129, 124, 124);
+  margin-bottom: .2rem;
+}
+
+.placeholders-left{
+  display: flex;
+  width: 100%;
+  max-width: 25%;
+  height: 2rem;
+  padding: .2rem .4rem;
+  font-size: 1rem;
+  font-family: serif;
+  font-weight: 600;
+  max-width: 120px;
+  align-items: center;
+  justify-content: center;
+  right: 1rem;
+  background: rgba(158, 156, 156, 0.507);
+  border: 0.1px solid rgb(177, 164, 153);
+  border-radius: var(--thin-br-1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+}
+
+.placeholders-right{
+  display: flex;
+  width: 100%;
+  max-width: 35%;
+  height: 2rem;
+  padding: .2rem .4rem;
+  font-size: 1rem;
+  font-family: serif;
+  font-weight: 600;
+  max-width: 160px;
+  align-items: center;
+  justify-content: center;
+  left: 1rem;
+  background: rgba(143, 140, 140, 0.507);
+  border: 0.1px solid rgb(177, 170, 165);
+  border-radius: var(--thin-br-1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal.show {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--body-bg-cl-1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-radius: 12px;
+  width: 100%;
+  gap: .8rem;
+  height: 27rem;
+  max-width: 410px;
+  box-shadow: 0 10px 25px rgba(49, 47, 47, 0.3);
+  text-align: center;
+  animation: popUp 0.3s ease;
+  border: 1px solid rgba(105, 104, 102, 0.774);
+}
+
+.hintText{
+width: 100%;
+height: max-content;
+padding: .2rem;
+align-items: center;
+justify-content: start;
+}
+
+.hintText h3 {
+  font-size: 1rem;
+  color: rgb(129, 124, 124);
+  margin-bottom: -.4rem;
+  margin-left: .5rem;
+  text-align: start;
+  justify-self: start;
+  font-family: Arial;
+  font-weight: 500;
+}
+
+.input-image{
+  width: 100%;
+  max-width: 94%;
+  height: max-content;
+  padding: .2rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.input-image img{
+  align-self: center;
+  margin-bottom: 1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: var(--thin-br-2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-image input {
+  width: 100%;
+  max-width: 290px;
+  height: 3rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  justify-self: start;
+  padding: 8px;
+  color: rgb(223, 216, 216);
+  border: 1px solid rgb(68, 66, 66);
+  border-radius: var(--thin-br-1);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-right: 3.7rem;
+  background: var(--body-bg-cl-1);
+  transition: border 0.3s ease;
+}
+
+.input-image input::placeholder{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.modal-content input:focus {
+  border: 0.1px solid var(--wht-thin-border-1);
+  outline: none;
+}
+
+.modal-buttons {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  height: 5rem;
+  background-color: rgba(59, 56, 56, 0.253);
+  border-radius: 6px;
+  padding: .9rem 1.1rem;
+  align-items: center;
+  border: 2px solid var(--thin-border);
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  gap: 1.5rem;
+}
+
+.modal-buttons .btn {
+  flex: 1;
+  padding: 10px;
+  width: max-content;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  border: 0.1px solid rgb(139, 135, 135);
+  font-size: 0.90rem;
+}
+
+.modal-buttons .cancel {
+  width: 100%;
+  max-width: 150px;
+  height: 2.4rem;
+  background: #726f6f;
+  font-size: 1.08rem;
+  font-family: Arial;
+  color: var(--text-cl-2);
+  border: 1px solid var(--text-cl-3);
+  box-shadow:  0 2px 6px rgba(66, 65, 65, 0.2);
+}
+
+.modal-buttons .continue {
+  width: 100%;
+  max-width: 150px;
+  padding: 0 .8rem;
+  height: 2.8rem;
+  display: flex;
+  border: 2px solid var(--thin-border-1);
+  align-items: center;
+  justify-content: center;
+  background: #087c69;
+  font-size: 1.2rem;
+  font-family: Arial;
+  color: wheat;
+  box-shadow:  0 2px 6px rgba(70, 69, 69, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1);opacity:1;}
+}
+
+
+.package-detail p{
+font-size: .91rem;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ </style>
+
+
+</head>
+<body>
+  <nav class="navbar-section">
+<div class="nav-left">
+  <img src="./icons/logol (1).png" alt="images" loading="lazy">
+</div>
+<!----middle-->
+<div class="nav-right">
+  <div class="btn-sign">
+    <a href="login.html">
+      <button class="login">
+      Sign Up
+    </button>
+    </a>
+  </div>
+</div>
+  </nav>
+  <!---HERO SECTION-->
+  <div class="hero-section">
+    <!---trust badge-->
+    <div class="trusted">
+      <img src="./images/flag3.jpg" alt="images" loading="lazy">No.1 Trusted Cheap Bundles Agent Shop in  Ghana
+    </div>
+    <!--cta-->
+    <div class="cta-text">
+      <h2>Get Connected Today</h2>
+    </div>
+    <!---queen-image-->
+    <div class="queen">
+      <img src="./icons/bg.png" alt="images" loading="lazy">
+    </div>
+    <!---NAMEdISPLAY-SECTION-->
+      <div class="user-info">
+        <p id="usernameDisplay"></p>
+      </div>
+    <!----name-display-ends-->
+    <div class="short-note">
+    <p> Buy all MTN data bundle for multiple or single <br>recipient on <br><strong> Queens-DataGH</strong></p>
+    </div>
+    <!---network-link-page-ui-->
+    <div class="networks">
+    <a href="index.html"> <div class="mtn">MTN</div></a>
+    <a href="tel.html"> <div class="tel">Telecel</div></a>
+    <a href="tigo.html"> <div class="tigo">AirtelTigo</div></a>
+    </div>
+  </div>
+
+<!----ORDER STATUS-SECTION---->
+<div class="order-status-container">
+  
+<div class="right-side">
+  <div class="right-side-top">
+    <div class="status-result" id="statusResult"></div>
+  </div>
+  <div class="right-side-btm">
+   <small>Check Live Status with <strong>Order ID</strong></small>
+  </div>
+  
+</div>
+
+<div class="left-side">
+   <section class="order-status-section">
+  <h2>Check Order Status</h2>
+  <span><img src="./icons/icons8-wifi.gif" alt="image" loading="lazy"></span>
+  <input type="text" id="orderInput" placeholder="Enter Order ID">
+  <button class="checkBt" id="checkBtn">Check Status</button>
+  
+</section>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+  <!--main-section-->
+  <section class="main-section">
+    <div class="card-container">
+      <!--CARD-1-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>1GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>1 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 7</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="1"
+  data-price="7"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-2-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>2GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>2 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 14</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="1"
+  data-price="14"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-3-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>3GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>3 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 18</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="3"
+  data-price="18"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-4-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>4GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>4 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 23</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="4"
+  data-price="23"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-5-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>5GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>5 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 27</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="5"
+  data-price="27"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-6-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>6GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>6 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 33</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="6"
+  data-price="33"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-7-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>7GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>7 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 37</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="7"
+  data-price="37"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-8-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>8GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>8 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 40</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="8"
+  data-price="40"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-9-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>9GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>9 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 44</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="9"
+  data-price="44"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-10-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>10GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>10 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 48</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="10"
+  data-price="48"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-11-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>12GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>12 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 60</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="12"
+  data-price="60"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-12-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>15GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>15 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 70</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="15"
+  data-price="70"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-13-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>20GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>20 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 92</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="20"
+  data-price="92"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-14-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>25GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>25 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 112</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="25"
+  data-price="112"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-15-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>30GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>30 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 130</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="30"
+  data-price="130"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-16-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>40GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>40 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 170</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="40"
+  data-price="170"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-17-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>50GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>50 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 210</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="50"
+  data-price="210"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+        <!--CARD-18-->
+      <div class="card-div">
+        <div class="card-div-top">
+            <!--img-->
+            <img src="./icons/icons8-wifi.gif" alt="images" loading="lazy">
+            <h2>MTN <strong>100GB</strong></h2>
+        </div>
+        <div class="card-div-bottom">
+          <div class="package-detail">
+            <div class="expiry-date">
+              <small>Expiry Date</small>
+              <p>90 days</p>
+            </div>
+            <div class="size">
+              <small>Size</small>
+              <p>100 GB</p>
+            </div>
+            <div class="price">
+              <small>Price</small>
+              <p>GHS 410</p>
+            </div>
+          </div>
+          <div class="buy-btn-div">
+            <button class="buy-btn"
+  data-network="mtn"
+  data-package= "mtn_data_normal_delivery"
+  data-size="100"
+  data-price="410"
+            >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!---status checker-->
+  </section>
+
+  <section class="foot">
+    <p style="text-align:center;color:#696363;border-top: 0.1px solid rgb(61, 58, 58); width: 100%;
+    display:flex;justify-content: center; align-items: center; height: 3rem; font-size:14px; margin-bottom: 0.5rem;padding-bottom:0. 8rem">© 2025 Queens-DataGH. All rights reserved.</p>
+
+
+  </section>
+
+
+
+
+<!-- Phone Input Modal -->
+<div id="phoneModal" class="modal">
+  <div class="modal-content">
+<!-----SELECTED-->
+      <div class="selected-div">
+    <h4>Selected Package Details</h4>
+    <div class="placeholders-wrapper">
+      <div class="placeholdersbtn-wrapper">
+              <small>Price</small>
+            <div class="placeholders-left"  id="priceTag">
+    </div>
+      </div>
+
+        <div class="placeholdersbtn-wrapper">
+          <small>Network/GB</small>
+            <div class="placeholders-right" id="networkTag">
+    </div>
+        </div>
+    </div>
+  </div>
+    <div class="hintText">
+      <h3>Bundle Recipient</h3>
+    </div>
+     <div class="input-image">
+      <input type="tel" id="recipientInput" placeholder="e.g. 0241234567"/>
+    <img src="./icons/icons8-wifi.gif" alt="images"loading="lazy">
+     </div>
+ 
+     <div class="modal-buttons ">
+       <button id="cancelBtn" class="btn cancel">Cancel</button>
+      <button id="confirmBtn" class="btn continue">Purchase</button>
+     </div>
+    
+</div>
+</div>
+
+
+<!-- Load Paystack library -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+
+
+
+<script type="module" src="./firebase-config.js"></script>
+
+<script type="module" src="./main.js"></script>
+
+
+<!---usernameDisplay----->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+ // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCWEv4OxX-nAN_Uo8gsIcGY6qWetjcVfeo",
+  authDomain: "queens-b53e4.firebaseapp.com",
+  projectId: "queens-b53e4",
+  storageBucket: "queens-b53e4.firebasestorage.app",
+  messagingSenderId: "212342928088",
+  appId: "1:212342928088:web:01512961fe10ac3a0cddad"
+};
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  onAuthStateChanged(auth, async (user) => {
+    const usernameDisplay = document.getElementById("usernameDisplay");
+
+// FORCE TO LOGIN THE USER //
+  
+
+
+
+
+    if (user) {
+      const userSnap = await getDoc(doc(db, "users", user.uid));
+      usernameDisplay.textContent = `Welcome Back on Queens-DataGH, ${userSnap.data().username}!`;
+    } else {
+      usernameDisplay.textContent = "Welcome Back, Guest!";
+    }
+});
+</script>
+
+<!---MENU-CARD-JS-->
+
+
+</body>
+</html>
