@@ -16,7 +16,7 @@ const API_BASE = (() => {
   if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
     return "http://localhost:5000";
   }
- // return "https://ecodata-app.onrender.com"; // your deployed backend
+  return "https://queens-datagh.onrender.com"; // your deployed backend
 })();
 
 
@@ -181,7 +181,7 @@ async function orderBundle(network, recipient, packageName, size, reference) {
     const API_BASE =
       window.location.hostname === "localhost"
         ? "http://localhost:5000"
-        : "https://ecodata-app.onrender.com";
+        : "https://queens-datagh.onrender.com";
 
     // ✅ Build query string for GET request
     const query = new URLSearchParams({
