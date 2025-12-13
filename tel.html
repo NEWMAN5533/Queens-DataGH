@@ -6,17 +6,28 @@
   <title>Queens-DataGH</title>
 
 <style>
-
-p{
-  display: flex;
-  flex-direction: column;
-  height: max-content;
-  margin-top: 0;
-  color: rgb(5, 117, 102);
-  font-size: 1.6rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+.user-info{
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1.8rem;
+  padding: .1rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
 }
+
+.user-info p{
+  font-size: 1.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  color: rgb(226, 218, 218);
+  text-align:center;
+}
+
+
+
 /****-----PHONE INPUT MODAL-------------****/
 /* ===== MODAL STYLING ===== */
 .modal {
@@ -142,13 +153,13 @@ p{
   align-items: center;  
   border-radius: 12px;
   width: 100%;
-  gap: .5rem;
-  height: 26rem;
-  max-width: 420px;
-  box-shadow: 0 10px 25px rgba(107, 105, 105, 0.3);
+  gap: .8rem;
+  height: 27rem;
+  max-width: 410px;
+  box-shadow: 0 10px 25px rgba(46, 44, 44, 0.3);
   text-align: center;
   animation: popUp 0.3s ease;
-  border: 1px solid rgba(63, 60, 57, 0.774);
+  border: 1px solid rgba(105, 104, 102, 0.774);
 }
 
 .hintText{
@@ -471,11 +482,16 @@ body{
 }
 
 .cta-text h2{
-  color: white;
+  color: rgb(134, 124, 124);
   font-size: var(--text-size-larger);
   font-weight: 600;
   font-family: Arial;
   word-spacing: normal;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  padding: .1rem .6rem;
+  background: var(--body-bg-cl-1);
+  margin-bottom: 2rem;
+  border: 0.1px solid var(--wht-thin-border-1);
 }
 
 .hero-section .queen{
@@ -609,8 +625,7 @@ body{
   grid-template-columns: repeat(2, 1fr);
   padding: .5rem;
   position: relative;
-  background-color: var(--body-bg-cl-1);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+ 
 }
 
 /***--CARD-DIV--**/
@@ -773,6 +788,11 @@ body{
   font-weight: 600;
 }
 
+
+.package-detail p{
+font-size: .91rem;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 </style>
 

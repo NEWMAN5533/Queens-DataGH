@@ -18,6 +18,27 @@
   
 /****-----PHONE INPUT MODAL-------------****/
 /*===== MODAL STYLING =====*/
+
+.user-info{
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1.8rem;
+  padding: .1rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.user-info p{
+  font-size: 1.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  color: rgb(226, 218, 218);
+  text-align:center;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -140,13 +161,13 @@
   align-items: center;  
   border-radius: 12px;
   width: 100%;
-  gap: .5rem;
-  height: 26rem;
-  max-width: 420px;
-  box-shadow: 0 10px 25px rgba(107, 105, 105, 0.3);
+  gap: .8rem;
+  height: 27rem;
+  max-width: 410px;
+  box-shadow: 0 10px 25px rgba(49, 47, 47, 0.3);
   text-align: center;
   animation: popUp 0.3s ease;
-  border: 1px solid rgba(63, 60, 57, 0.774);
+  border: 1px solid rgba(105, 104, 102, 0.774);
 }
 
 .hintText{
@@ -283,6 +304,10 @@ justify-content: start;
 }
 
 
+.package-detail p{
+font-size: .91rem;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
  </style>
 
 
@@ -318,7 +343,9 @@ justify-content: start;
       <img src="./icons/bg.png" alt="images" loading="lazy">
     </div>
     <!---NAMEdISPLAY-SECTION-->
-      <p id="usernameDisplay"></p>
+      <div class="user-info">
+        <p id="usernameDisplay"></p>
+      </div>
     <!----name-display-ends-->
     <div class="short-note">
     <p> Buy all MTN data bundle for multiple or single <br>recipient on <br><strong> Queens-DataGH</strong></p>
