@@ -1354,9 +1354,10 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 .hero-section{
   width: 100%;
   max-width: 98%;
-  height: 31rem;
+  height: 33rem;
   display: flex;
   top: 3.1rem;
+  gap: 1rem;
 }
 
 
