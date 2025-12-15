@@ -838,7 +838,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 
 /*** MEDIA QUERIES8***/
-@media (min-width: 414px) {
+@media (max-width: 400px) {
   .navbar-section{
     width: 100%;
   }
