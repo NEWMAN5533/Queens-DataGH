@@ -962,13 +962,13 @@ MAIN SECTION
 
 .main-section .card-container{
   width: 100%;
-  max-width: 414px;
+  max-width: 96%;
 
 }
 
 /***--CARD-DIV--**/
 .card-div{
-  width: 12rem;
+  width: 11.5rem;
   height: 19rem;
   display: flex;
 
