@@ -841,7 +841,7 @@ ORDER STATUS CHECKER
 ****/
 .order-status-container{
   width: 100%;
-  max-width: 400px;
+  max-width: 98%;
   height: 25.4rem;
   display: flex;
   margin-top: 4rem;
@@ -905,7 +905,7 @@ MAIN SECTION
 
 .main-section .card-container{
   width: 100%;
-  max-width: 414px;
+  max-width: 98%;
 
 }
 

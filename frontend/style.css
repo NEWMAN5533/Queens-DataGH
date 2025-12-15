@@ -1335,7 +1335,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
   .main-container-wrapper{
     width: 100%;
     height: max-content;
-    max-width: 390px;
+    max-width: 400px;
     display: flex;
     justify-self: center;
     flex-direction: column;
@@ -1356,7 +1356,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
   max-width: 98%;
   height: 33rem;
   display: flex;
-  top: 3.1rem;
+  top: 4.1rem;
   gap: 1rem;
 }
 
@@ -1381,7 +1381,7 @@ ORDER STATUS CHECKER
 ****/
 .order-status-container{
   width: 100%;
-  max-width: 400px;
+  max-width: 98%;
   height: 25.4rem;
   display: flex;
   margin-top: 4rem;
@@ -1445,7 +1445,7 @@ MAIN SECTION
 
 .main-section .card-container{
   width: 100%;
-  max-width: 414px;
+  max-width: 98%;
 
 }
 
