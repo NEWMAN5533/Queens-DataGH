@@ -1,3 +1,282 @@
+/****
+DARK MODE STYLING
+****/
+
+/***
+dark mode styles
+****/
+.theme-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  width: 55px;
+  margin-right: 2rem;
+  height: 30px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+
+
+.slider {
+  position: relative;
+  background: #383535;
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  border: 2px solid rgb(136, 120, 123);
+}
+
+.dark-mode .slider{
+  background: white;
+}
+
+.slider span img{
+  width: 1.7rem;
+  height: 1.7rem;
+  rotate: -26deg;
+  margin-top: .26rem;
+
+}
+
+.slider .icon {
+  font-size: 14px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+}
+
+input:checked + .slider {
+  background: #222;
+  border: 0.1px solid rgb(53, 49, 48);
+}
+
+.dark-mode input:checked + .slider{
+  background-color: rgb(219, 213, 213);
+  border: 1px solid rgb(199, 192, 192);
+}
+
+input:checked + .slider .sun {
+  opacity: 0;
+  transform: translateX(-25px);
+
+}
+
+input:checked + .slider .moon {
+  opacity: 1;
+  transform: translateX(25px);
+}
+
+.slider .moon {
+opacity:0;
+}
+
+/***
+dark css
+***/
+
+body.dark-mode{
+  background: #f5f3f3;
+}
+
+.dark-mode .navbar-section{
+  background: rgb(252, 250, 250);
+  box-shadow: 0 2px 6px rgba(146, 144, 144, 0.6);
+  border: none;
+}
+
+
+.dark-mode .nav-left img{
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+  border: 1px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.dark-mode  a .login{
+  background: rgb(41, 153, 116);
+  border: 1px solid rgb(75, 177, 160);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+
+
+
+
+
+
+.dark-mode .hero-section{
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .hero-section .trusted{
+  background-color: white;
+  color: rgb(75, 72, 72);
+  font-family: serif;
+  font-weight: 600;
+}
+
+.dark-mode .cta-text h2{
+  background: white;
+  color: black;
+  box-shadow: 0 2px 6px rgba(124, 122, 122, 0.6);
+  border: none;
+}
+
+.dark-mode .queen img{
+  border: 1px solid rgb(163, 160, 160);
+}
+
+.dark-mode .user-info p{
+  color: rgb(31, 29, 29);
+}
+
+.dark-mode .short-note p{
+  color: rgb(36, 34, 16);
+}
+
+.dark-mode .short-note strong{
+  color: rgb(124, 114, 27);
+}
+
+.dark-mode .networks{
+  background: rgb(216, 235, 238);
+  border: 1px solid white;
+  box-shadow: 0 2px 6px solid rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode  a .mtn{
+  background: rgb(238, 238, 160);
+  border: 1px solid rgb(240, 235, 166);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+
+
+.dark-mode  a .tel{
+  background: rgb(247, 181, 192);
+  border: 1px solid rgb(241, 189, 189);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+
+.dark-mode  a .tigo{
+  background: rgb(181, 181, 243);
+  border: 1px solid rgb(162, 189, 219);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.dark-mode .order-status-container{
+  background: white;
+  border: 1px solid white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.dark-mode .right-side{
+  background: white;
+}
+.dark-mode .right-side-top{
+  border-right: 1px solid rgb(214, 209, 209);
+  border-bottom: 1px solid rgb(214, 209, 209);
+}
+
+.dark-mode .right-side-btm{
+  border-right: 1px solid rgb(201, 194, 194);
+}
+
+
+.dark-mode .left-side{
+  background: white;
+}
+
+.dark-mode .order-status-section{
+  background: white;
+  width: 220px;
+  height: 18rem;
+  border: 1px solid rgb(238, 237, 237);
+  border-radius: .5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .order-status-section h2{
+  color: black;
+}
+
+.dark-mode .order-status-container input{
+  background: white;
+  border: 1px solid rgb(196, 195, 195);
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.dark-mode .checkBt{
+  background: white;
+  height: 2.2rem;
+  border: 1px solid rgb(235, 227, 227);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dark-mode .card-div{
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 6px rgba(112, 110, 110, 0.4);
+  border: 1px solid rgb(230, 222, 222);
+}
+
+.dark-mode .card-div-top{
+  background: rgb(221, 237, 243);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .card-div-top img{
+  border: 2px solid rgb(177, 170, 170);
+}
+
+.dark-mode .card-div-top h2{
+  color: rgb(59, 59, 59);
+}
+
+.dark-mode .buy-btn{
+  background:rgb(228, 232, 241);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid rgb(245, 234, 234);
+}
+
+.dark-mode .buy-btn:hover{
+ background:  rgb(223, 230, 240);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .user-info{
   width: 100%;
@@ -472,7 +751,7 @@ body{
 .hero-section{
   width: 100%;
   max-width: 480px;
-  height: 28rem;
+  height: 29rem;
   display: flex;
   align-items: center;
   flex-direction: column;
