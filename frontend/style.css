@@ -12,7 +12,7 @@ dark mode styles
   cursor: pointer;
   width: 55px;
   margin-right: 2rem;
-  height: 30px;
+  height: 28px;
 }
 
 .theme-switch input {
@@ -839,6 +839,7 @@ ORDER STATUS CHECKER
   width: 100%;
   max-width: 470px;
   height: 25.4rem;
+  border-radius: 1rem;
   display: flex;
   background: var(--nav-bg-cl-2);
   border: 0.1px solid var(--wht-thin-border-1);
@@ -949,7 +950,7 @@ ORDER STATUS
   position: relative;
   max-width: 200px;
   display: flex;
-  height: 15.5rem;
+  height: 18rem;
   align-items: center;
   justify-content: center;
   gap: 1.6rem;
