@@ -1607,12 +1607,10 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 
 
-/*** MEDIA QUERIES8***/
-@media (max-width: 400px) {
 
-
-
-
+  
+@media (max-width: 480px) {
+  
 
 
   /***
@@ -1646,7 +1644,6 @@ DISPLAY NONE
 
   .navbar-section{
     width: 100%;
-    max-width: 400px;
     position: fixed;
     z-index: 99999;;
   }
@@ -1670,7 +1667,7 @@ DISPLAY NONE
   .main-container-wrapper{
     width: 100%;
     height: max-content;
-    max-width: 400px;
+    max-width: 480px;
     display: flex;
     justify-self: center;
     flex-direction: column;
@@ -1687,8 +1684,7 @@ DISPLAY NONE
   
 /***----HERO SECTION---***/
 .dark-mode .hero-section{
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
   height: 29rem;
   display: flex;
   top: 4.1rem;
@@ -1708,7 +1704,7 @@ DISPLAY NONE
 
 .hero-section{
   border-radius: 0 !important;
-  height: 30rem !important;
+  height: 29rem !important;
   border: none !important;
   margin-left: .6rem;
 }
@@ -1721,7 +1717,7 @@ DISPLAY NONE
 
 .hero-section .trusted{
   width: 100%;
-  max-width: 370px;
+  max-width: 460px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -1737,10 +1733,11 @@ ORDER STATUS CHECKER
 
 .order-status-container{
   width: 100%;
-  max-width: 98% !important;
+  max-width: 92% !important;
   height: 25.4rem;
   display: flex;
   margin-top: 2rem;
+  margin-right: 1rem;
 }
 
 .dark-mode .order-status-container{
@@ -1824,11 +1821,11 @@ MAIN SECTION
   max-width: 92%;
   display: grid;
   gap: .8rem;
-  grid-template-columns: repeat(2,1fr) !important;
+  grid-template-columns: repeat(3,1fr) !important;
   justify-content: center;
   align-items: center;
   justify-self: center;
-  margin-left: 18.5rem;
+  margin-left: 15.7rem;
 }
 
 .dark-mode .main-section .card-container{
@@ -1840,19 +1837,20 @@ MAIN SECTION
   justify-self: center;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /***--CARD-DIV--**/
 .card-div{
-  width: 11.5rem !important;
-  height: 19rem;
+  width: 9.1rem !important;
+  height: 16rem;
   display: flex;
 }
 
 .dark-mode .card-div{
-  width: 11.5rem !important;
-  height: 19rem;
+  width: 9.1rem !important;
+  display: flex;
+  height: 16rem;
 }
 
 .foot{
@@ -1916,11 +1914,7 @@ SNACKBAR SECTION
   background: var(--bg-cl);
 }
 
-
-
 }
-  
-
 
 
 
@@ -2430,4 +2424,6 @@ BOTTOM SECTION
 
 
 }
+
+
 

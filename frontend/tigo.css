@@ -1113,12 +1113,9 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 
 
-/*** MEDIA QUERIES8***/
-@media (max-width: 400px) {
-
-
-
-
+  
+@media (max-width: 480px) {
+  
 
 
   /***
@@ -1152,17 +1149,30 @@ DISPLAY NONE
 
   .navbar-section{
     width: 100%;
-    max-width: 400px;
     position: fixed;
     z-index: 99999;;
   }
 
+  .navbar-section .login{
+    display: flex !important;
+    width: 5rem;
+    justify-content: center;
+    align-items: center;
+    height: 1.7rem;
+  }
+
+  .dark-mode .nav-right a .login{
+  background: rgb(41, 153, 116);
+  border: 1px solid rgb(75, 177, 160);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  color: white;
+}
 
   /**** ALL CONTENT WRAPPER***/
   .main-container-wrapper{
     width: 100%;
     height: max-content;
-    max-width: 400px;
+    max-width: 480px;
     display: flex;
     justify-self: center;
     flex-direction: column;
@@ -1179,20 +1189,13 @@ DISPLAY NONE
   
 /***----HERO SECTION---***/
 .dark-mode .hero-section{
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
   height: 29rem;
   display: flex;
   top: 4.1rem;
   border-radius: 0;
-  margin-left: .6rem;
+  margin: 0 !important;
   justify-self: center;
-}
-
-
-
-.networks .mtn, .tel, .tigo{
-  display: flex !important;
 }
 
 
@@ -1203,25 +1206,23 @@ DISPLAY NONE
 }
 
 
+
 .hero-section{
   border-radius: 0 !important;
-  height: 30rem !important;
+  height: 29rem !important;
   border: none !important;
   margin: 0 !important;
 }
 
 
-
-
-
-.networks {
-  display: flex !important;
+.hero-section .networks{
+  display: flex;
 }
 
 
 .hero-section .trusted{
   width: 100%;
-  max-width: 370px;
+  max-width: 460px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -1237,10 +1238,11 @@ ORDER STATUS CHECKER
 
 .order-status-container{
   width: 100%;
-  max-width: 98% !important;
+  max-width: 92% !important;
   height: 25.4rem;
   display: flex;
   margin-top: 2rem;
+  margin-right: 1rem;
 }
 
 .dark-mode .order-status-container{
@@ -1324,12 +1326,12 @@ MAIN SECTION
   max-width: 92%;
   display: grid;
   gap: .8rem;
-  grid-template-columns: repeat(2,1fr) !important;
+  grid-template-columns: repeat(3,1fr) !important;
   justify-content: center;
   align-items: center;
   justify-self: center;
+  margin-left: 15.7rem;
   margin-top: 6rem;
-  margin-left: 16.5rem;
 }
 
 .dark-mode .main-section .card-container{
@@ -1337,23 +1339,25 @@ MAIN SECTION
   max-width: 92%;
   display: grid;
   gap: .8rem;
-  margin-left: 19rem;
   justify-self: center;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 18.3rem;
+  margin-top: 6rem;
 }
 
 /***--CARD-DIV--**/
 .card-div{
-  width: 11.5rem !important;
-  height: 19rem;
+  width: 9.1rem !important;
+  height: 16rem;
   display: flex;
 }
 
 .dark-mode .card-div{
-  width: 11.5rem !important;
-  height: 19rem;
+  width: 9.1rem !important;
+  display: flex;
+  height: 16rem;
 }
 
 .foot{
@@ -1416,8 +1420,6 @@ SNACKBAR SECTION
   max-width: 360px;
   background: var(--bg-cl);
 }
-
-
 
 }
 
