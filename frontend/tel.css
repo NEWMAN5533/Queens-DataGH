@@ -1069,17 +1069,50 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 
 
-
 /*** MEDIA QUERIES8***/
 @media (max-width: 400px) {
-  .navbar-section{
-    width: 100%;
+
+
+
+
+
+
+  /***
+  display none
+  ****/
+ 
+
+  .order-status-container-wrapper .card-badge-container{
+    display: none;
   }
 
-  .login{
-    width: 5rem;
-    height: 1.7rem;
+  /***
+  dark-mode display none div
+@media (max-width: 400px) {
+
+
+  
+/***
+DISPLAY NONE
+****/
+
+.sidebar-container{
+  display: none !important;
+}
+
+
+.dark-mode .sidebar-container{
+  display: none;
+}
+
+
+  .navbar-section{
+    width: 100%;
+    max-width: 400px;
+    position: fixed;
+    z-index: 99999;;
   }
+
 
   /**** ALL CONTENT WRAPPER***/
   .main-container-wrapper{
@@ -1101,26 +1134,48 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
   ***/
   
 /***----HERO SECTION---***/
-.hero-section{
+.dark-mode .hero-section{
   width: 100%;
-  max-width: 98%;
-  height: 32.5rem;
+  max-width: 100%;
+  height: 29rem;
   display: flex;
-  top: 3.1rem;
-  gap: 1rem;
+  top: 4.1rem;
+  border-radius: 0;
+  margin-left: .6rem;
+  justify-self: center;
+}
+
+.networks .mtn, .tel, .tigo{
+  display: flex !important;
+}
+
+
+.dark-mode .networks{
+  display: flex;
+  border-radius: none;
+  height: 4rem;
 }
 
 
 
 
 
+.hero-section{
+  border-radius: 0 !important;
+  height: 29rem !important;
+  border: none !important;
+  margin-left: .6rem;
+}
 
 
+.hero-section .networks{
+  display: flex;
+}
 
 
 .hero-section .trusted{
   width: 100%;
-  max-width: 380px;
+  max-width: 370px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -1129,13 +1184,31 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 /****
 ORDER STATUS CHECKER
 ****/
+.order-status-container-wrapper{
+  margin: 0;
+}
+
+
 .order-status-container{
   width: 100%;
-  max-width: 98%;
+  max-width: 98% !important;
   height: 25.4rem;
   display: flex;
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
 
+.dark-mode .order-status-container{
+  max-width: 98%;
+
+}
+.dark-mode .right-side{
+  width: 100%;
+  max-width: 50%;
+}
+
+.dark-mode .left-side{
+  width: 100%;
+  max-width: 50%;
 }
 
 /**--ORDER STAtUS ENDS--**/
@@ -1154,6 +1227,11 @@ ORDER STATUS CHECKER
 
 .status-result{
   width: 100%;
+  max-width: 180px !important;
+}
+
+.dark-mode .status-result{
+  width: 100%;
   max-width: 180px;
 }
 
@@ -1164,7 +1242,7 @@ ORDER STATUS
 
 .order-status-section {
   position: relative;
-  max-width: 210px;
+  max-width: 180px;
   display: flex;
   height: 15.5rem;
 }
@@ -1188,33 +1266,58 @@ MAIN SECTION
   padding: .6rem 0;
   position: relative;
   background: transparent;
-  justify-content: center;;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   justify-self: center;
+  margin-top: -2rem;
 }
 
 .main-section .card-container{
   width: 100%;
   max-width: 92%;
+  display: grid;
+  gap: .8rem;
+  grid-template-columns: repeat(2,1fr) !important;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  margin-top: 6rem;
+  margin-left: 16.5rem;
+}
 
+.dark-mode .main-section .card-container{
+  width: 100%;
+  max-width: 92%;
+  display: grid;
+  gap: .8rem;
+  margin-left: 19rem;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /***--CARD-DIV--**/
 .card-div{
-  width: 11.5rem;
+  width: 11.5rem !important;
   height: 19rem;
   display: flex;
+}
 
+.dark-mode .card-div{
+  width: 11.5rem !important;
+  height: 19rem;
 }
 
 .foot{
   width: 100%;
-  height: 4rem;
-  padding-top: 1rem;
- justify-content: center;
- align-items: center;
- text-align: center;
+  margin: 0;
+  padding: 0;
 }
+
+
+
 
 
 /***
@@ -1226,7 +1329,6 @@ PHONE MODAL
   height: 27rem;
   max-width: 90%;
 }
-
 
 
     /***
@@ -1268,5 +1370,521 @@ SNACKBAR SECTION
   max-width: 360px;
   background: var(--bg-cl);
 }
+
+
+
+}
+  
+
+/***
+LAPTOP UI
+*****/
+@media (max-width: 1366px) {
+
+.login {
+  width: 6rem;
+  height: 1.9rem;
+  background-color: rgb(97, 61, 11);
+  border-radius: 2px;
+  cursor: pointer;
+  color: rgb(190, 182, 182);
+  border: none;
+  border-radius: 1rem;
+  border: 1.8px solid  rgb(105, 100, 100);
+  box-shadow: 0 2px 6px solid rgba(0, 0, 0, 0.3);
+}
+
+  /****
+  display none div @1366px
+  ****/
+  .nav-right .login{
+    display: none;
+  }
+/****
+SIDEBAR-SECTION
+****/
+.sidebar-container{
+  width: 100%;
+  max-width: 290px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: none;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.sidebar-top{
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  background: var(--body-bg-cl-1);
+  justify-content: center;
+  border-bottom: 0.1px solid var(--wht-thin-border-1);
+  border-right: 1px solid var(--wht-thin-border-1);
+}
+
+.dark-mode .sidebar-top{
+  border-right: 1px solid rgb(201, 191, 191);
+  border-bottom: 1px solid  rgb(201, 191, 191);
+  background: rgb(255, 255, 255);
+}
+
+.user-panel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  background: rgb(105, 89, 45);
+  width: 8rem;
+  height: 4rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid rgba(156, 128, 33, 0.4);
+  box-shadow: 0 2px 6px rgba(27, 27, 27, 0.6);
+}
+
+.dark-mode .user-panel {
+  background: white;
+  box-shadow: 0 2px 6px rgba(124, 123, 123, 0.6);
+  border: 1px solid  rgb(124, 123, 37);
+}
+
+.user-panel h4{
+  color: rgb(41, 40, 40);
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dark-mode .user-panel h4{
+  color: rgb(94, 91, 91);
+}
+
+.dark-mode .foot{
+  border-top: rgb(94, 91, 91);
+}
+
+.sidebar-middle{
+  width: 96%;
+  height: 30rem;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  gap: 1.2rem;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  background: var(--body-bg-cl-1);
+  scrollbar-color: var(--body-bg-cl-1);
+  padding: .6rem .2rem;
+  align-items: center;
+  justify-content: start;
+  border-right: 1px solid var(--wht-thin-border-1);
+}
+
+.dark-mode .sidebar-middle {
+  border-right: 1px solid rgb(201, 193, 193);
+  background: rgb(255, 255, 255);
+}
+
+
+.sidebar-middle .term a{
+  font-size: .9rem;
+  color: rgb(166, 170, 163);
+}
+
+.dark-mode .sidebar-middle .term a{
+  color: rgb(90, 89, 29) ;
+}
+
+
+
+.sidebar-middle a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgb(231, 225, 225);
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.2rem;
+}
+
+.dark-mode .sidebar-middle a{
+  color: rgb(90, 89, 29);
+}
+
+
+.sidebar-middle img{
+  width: 2.3rem;
+  height: 2.4rem;
+  background-color: var(--body-bg-cl-1);
+  padding: .3rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--wht-thin-border-1);
+}
+
+.dark-mode .sidebar-middle img{
+  background: whitesmoke;
+  border: 2px solid white;
+}
+
+.sidebar-middle .network-page{
+  width: 100%;
+  height: 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: .5rem;
+  transition: .1s ease;
+}
+
+.sidebar-middle .network-page:hover{
+  background: rgb(94, 87, 87);
+  border-radius: 8px;
+}
+
+.dark-mode .network-page:hover{
+  background:  rgb(233, 228, 228);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-middle .network-page img:hover{
+  transform: scale(1.05);
+}
+
+
+
+
+.sidebar-bottom{
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
+  justify-content: start;
+  padding: 1rem;
+  background: var(--body-bg-cl-1);
+   border-top: 1px solid var(--wht-thin-border-1);
+   border-right: 1px solid var(--wht-thin-border-1);
+}
+
+
+
+.dark-mode .sidebar-bottom{
+  border-top: 1px solid rgb(201, 191, 191);
+  border-right: 1px solid rgb(201, 191, 191);
+  background: rgb(255,255,255);
+}
+
+.sidebar-bottom small{
+  color: rgb(77, 126, 13);
+  font-size: 1.1rem;
+  text-decoration: underline;
+}
+
+.sidebar-bottom .login-1366{
+  width: 12rem;
+}
+
+
+
+
+
+
+/***
+SIDEBAR-ENDS
+****/
+
+  .navbar-section{
+    width: 100%;
+    max-width: 1060px;
+    justify-self: end;
+    background: var(--body-bg-cl-1);
+  }
+
+
+
+  .dark-mode .modal{
+    z-index: 999999999999;
+  }
+
+ 
+
+  .hero-section{
+    width: 100%;
+    height: 25rem;
+    border-end-end-radius: 3rem;
+    border-end-start-radius: 3rem;
+    gap: .5rem;
+    background: var(--body-bg-cl-1);
+    max-width: 1040px;
+    justify-self: end;
+    margin-right: .6rem;
+    box-shadow: 0 2px 6px rgba(15, 15, 15, 0.8);
+    border-bottom: 2px solid var(--wht-thin-border-1);
+  }
+
+  .dark-mode .hero-section {
+    border-bottom: 1px solid rgb(214, 206, 206);
+  }
+
+  .networks{
+    display: none
+  }
+
+
+
+
+  /****
+  ORDER STATUS SECTION
+  ****/
+
+  .order-status-container-wrapper{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 27rem;
+   max-width: 1030px;
+   justify-self: end;
+   gap: 1rem;
+   position: relative;
+   justify-content: center;
+   align-content: center;
+   justify-items: center;
+   margin-top: 5rem;
+   margin-right: .5rem;
+   border-radius: 1.2rem;
+  }
+
+
+
+
+
+  .card-badge-container{
+    width: 100%;
+    max-width: 50%;
+    height: 94%;
+    gap: 10%;
+    flex-direction: column;
+    justify-content: end;
+    display: flex;
+    align-items: start;
+    position: relative;
+    padding: .3rem;
+  }
+.dark-mode .network-badge {
+  background: white;
+  border-radius: .8rem;
+  box-shadow:  0 2px 6px rgba(0, 0, 0, 0.2);
+  padding-bottom: 1rem;
+  border: 1px solid rgb(206, 199, 199);
+}
+
+.dark-mode .network-badge h5{
+  color: black;
+}
+
+.dark-mode .network-badge li{
+  color: black;
+}
+  
+/****
+CARD BADGE SECTION
+****/
+.partner-cta-div{
+  width: 100%;
+  height: 40%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.network-div-container{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+
+.network-badge{
+  width: 23rem;
+  border-radius: 1rem;
+  height: 15rem;
+  display: flex;
+  gap: .4rem;
+  flex-direction: column;
+  background: var(--mtn-bgn-cl);
+  box-shadow:  0 2px 6px rgba(14, 13, 13, 0.4);
+  border: 1px solid var(--wht-thin-border-1);
+  margin-top: 3rem;
+}
+
+.network-badge-top{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-top: .5rem;
+}
+
+.left-side-badge{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-side-badge img{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 2px solid rgb(112, 98, 19);
+}
+
+.dark-mode .left-side-badge img{
+  border: 3px solid rgb(199, 197, 197);
+}
+
+/****
+RIGHT SIDE
+****/
+.right-side-badge{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  column-gap: 0;
+  flex-direction: column;
+}
+
+.right-side-badge h5{
+  color: rgb(209, 204, 204);
+  font-size: 1.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  font-weight: 600;
+}
+
+.right-side-badge small span{
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.right-side-badge small{
+  color: rgb(109, 109, 55);
+  font-weight: 800;
+  font-family: sans-serif;
+}
+
+/***
+BOTTOM SECTION
+****/
+.network-badge-bottom{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: start;
+  color: rgb(202, 195, 195);
+  padding-right: .5rem;
+  font-size: .8rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.network-badge-bottom strong{
+  color:  rgb(109, 109, 55);
+}
+
+.network-badge-bottom ul li{
+  text-decoration: none;
+  list-style: none;
+}
+
+.network-badge-bottom span{
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgb(109, 109, 55);
+}
+
+
+
+
+
+
+
+
+  .order-status-container{
+    width: 100%;
+    max-width: 480px;
+    justify-self: end;
+    margin-left: 5.3rem;
+    margin-bottom: 5rem;
+    justify-self: end;
+    box-shadow:  0 2px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  .right-side{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background: var(--body-bg-cl-1);
+  }
+
+  .left-side {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--body-bg-cl-1);
+  }
+
+  .left-side .checkBt{
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .order-status-section{
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  }
+
+  .status-result{
+    width: 100%;
+    max-width: 220px;
+    justify-self: center;
+  }
+
+  /***
+  CARD-DIV CONTAINERS
+  ****/
+.main-section .card-container{
+  width: max-content;
+  padding: .5rem;
+  display: grid;
+  gap: 1rem;
+  justify-content: start;
+  grid-template-columns: repeat(5, 1fr);
+  margin-right: 18.5rem;
+}
+
+.card-div{
+  width: 12.3rem;
+  height: 18rem
+}
+
+
 
 }
