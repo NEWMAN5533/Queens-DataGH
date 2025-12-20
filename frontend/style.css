@@ -1609,7 +1609,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 
   
-@media (max-width: 480px) {
+@media (max-width: 400px) {
   
 
 
@@ -1667,7 +1667,7 @@ DISPLAY NONE
   .main-container-wrapper{
     width: 100%;
     height: max-content;
-    max-width: 480px;
+    max-width: 400px;
     display: flex;
     justify-self: center;
     flex-direction: column;
@@ -1685,7 +1685,7 @@ DISPLAY NONE
 /***----HERO SECTION---***/
 .dark-mode .hero-section{
   width: 100% !important;
-  height: 29rem;
+  height: 30rem;
   display: flex;
   top: 4.1rem;
   border-radius: 0;
@@ -1704,7 +1704,7 @@ DISPLAY NONE
 
 .hero-section{
   border-radius: 0 !important;
-  height: 29rem !important;
+  height: 30rem !important;
   border: none !important;
   margin-left: .6rem;
 }
@@ -1717,7 +1717,7 @@ DISPLAY NONE
 
 .hero-section .trusted{
   width: 100%;
-  max-width: 460px;
+  max-width: 370px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -1733,12 +1733,14 @@ ORDER STATUS CHECKER
 
 .order-status-container{
   width: 100%;
-  max-width: 92% !important;
+  max-width: 90% !important;
   height: 25.4rem;
   display: flex;
   margin-top: 2rem;
   margin-right: 1rem;
 }
+
+
 
 .dark-mode .order-status-container{
   max-width: 98%;
@@ -1770,12 +1772,12 @@ ORDER STATUS CHECKER
 
 .status-result{
   width: 100%;
-  max-width: 180px !important;
+  max-width: 160px !important;
 }
 
 .dark-mode .status-result{
   width: 100%;
-  max-width: 180px;
+  max-width: 160px;
 }
 
 
@@ -1785,9 +1787,9 @@ ORDER STATUS
 
 .order-status-section {
   position: relative;
-  max-width: 180px;
+  max-width: 160px;
   display: flex;
-  height: 15.5rem;
+  height: 17rem;
 }
 
 
@@ -1818,39 +1820,39 @@ MAIN SECTION
 
 .main-section .card-container{
   width: 100%;
-  max-width: 92%;
+  max-width: 98%;
   display: grid;
   gap: .8rem;
-  grid-template-columns: repeat(3,1fr) !important;
+  grid-template-columns: repeat(2,1fr) !important;
   justify-content: center;
   align-items: center;
   justify-self: center;
-  margin-left: 15.7rem;
+  margin-left: 18.7rem;
 }
 
 .dark-mode .main-section .card-container{
   width: 100%;
-  max-width: 92%;
+  max-width: 98%;
   display: grid;
   margin: 0 !important;
-  gap: .8rem;
+  gap: 1.3rem;
   justify-self: center;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /***--CARD-DIV--**/
 .card-div{
-  width: 9.1rem !important;
-  height: 16rem;
+  width: 11rem !important;
+  height: 17rem;
   display: flex;
 }
 
 .dark-mode .card-div{
-  width: 9.1rem !important;
+  width: 11rem !important;
   display: flex;
-  height: 16rem;
+  height: 17rem;
 }
 
 .foot{
