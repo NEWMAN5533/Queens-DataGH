@@ -1840,7 +1840,7 @@ MAIN SECTION
   justify-content: center;
   align-items: center;
   justify-self: center;
-  margin-left: 18.7rem;
+  margin-left: 18.3rem;
 }
 
 .dark-mode .main-section .card-container{
@@ -1848,7 +1848,7 @@ MAIN SECTION
   max-width: 98%;
   display: grid;
   margin: 0 !important;
-  gap: 1.3rem;
+  gap: 1rem;
   justify-self: center;
   justify-content: center;
   align-items: center;
