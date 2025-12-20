@@ -1144,7 +1144,9 @@ DISPLAY NONE
   /***
   CONTAINER
   ***/
-  
+    .user-info{
+    padding-bottom: 3rem;
+  }
 /***----HERO SECTION---***/
 .dark-mode .hero-section{
   width: 100% !important;
@@ -1167,7 +1169,7 @@ DISPLAY NONE
 
 .hero-section{
   border-radius: 0 !important;
-  height: 30rem !important;
+  height: 31.5rem !important;
   border: none !important;
   margin-left: .6rem;
 }
@@ -1175,6 +1177,7 @@ DISPLAY NONE
 
 .hero-section .networks{
   display: flex;
+  margin-top: .5rem;
 }
 
 
@@ -1298,7 +1301,7 @@ MAIN SECTION
   max-width: 98%;
   display: grid;
   margin: 0 !important;
-  gap: 1.3rem;
+  gap: 1rem;
   justify-self: center;
   justify-content: center;
   align-items: center;

@@ -1187,7 +1187,9 @@ DISPLAY NONE
   /***
   CONTAINER
   ***/
-  
+     .user-info{
+    padding-bottom: 3rem;
+  }
 /***----HERO SECTION---***/
 .dark-mode .hero-section{
   width: 100% !important;
@@ -1210,7 +1212,7 @@ DISPLAY NONE
 
 .hero-section{
   border-radius: 0 !important;
-  height: 30rem !important;
+  height: 31.5rem !important;
   border: none !important;
   margin: 0 !important;
 }
@@ -1218,6 +1220,7 @@ DISPLAY NONE
 
 .hero-section .networks{
   display: flex;
+  margin-top: .5rem;
 }
 
 
@@ -1239,7 +1242,7 @@ ORDER STATUS CHECKER
 
 .order-status-container{
   width: 100%;
-  max-width: 90% !important;
+  max-width: 98% !important;
   height: 25.4rem;
   display: flex;
   margin-top: 2rem;
@@ -1249,7 +1252,12 @@ ORDER STATUS CHECKER
 
 
 .dark-mode .order-status-container{
-  max-width: 98%;
+    width: 100%;
+  max-width: 98% !important;
+  height: 25.4rem;
+  display: flex;
+  margin-top: 2rem;
+  margin-right: 1rem;
 
 }
 .dark-mode .right-side{
@@ -1333,7 +1341,7 @@ MAIN SECTION
   justify-content: center;
   align-items: center;
   justify-self: center;
-  margin-left: 18.7rem;
+  margin-left: 18.5rem;
 }
 
 .dark-mode .main-section .card-container{
@@ -1341,7 +1349,7 @@ MAIN SECTION
   max-width: 98%;
   display: grid;
   margin: 0 !important;
-  gap: 1.3rem;
+  gap: 1rem;
   justify-self: center;
   justify-content: center;
   align-items: center;
