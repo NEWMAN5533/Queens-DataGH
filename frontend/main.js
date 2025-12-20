@@ -36,7 +36,7 @@ document.querySelectorAll(".buy-btn").forEach(button => {
     const size = button.dataset.size;
     const price = button.dataset.price;
 
-    document.getElementById("priceTag").textContent = `GHS ${button.dataset.price}`;
+    document.getElementById("priceTag").textContent = `₵ ${button.dataset.price}`;
     document.getElementById("networkTag").textContent = `${button.dataset.network.toUpperCase()} / ${button.dataset.size}GB`;
 
 

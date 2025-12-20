@@ -345,7 +345,7 @@ body.dark-mode{
 
 .selected-div h4{
   color: rgb(201, 196, 196);
-  font-size: 1.2rem;
+  font-size: .9rem;
   font-weight: 500;
   width: 100%;
   max-width: 30%;
@@ -389,14 +389,15 @@ body.dark-mode{
   max-width: 20%;
   height: 2rem;
   padding: .2rem .4rem;
-  font-size: 1rem;
+  font-size: .9rem;
+  color: rgb(4, 235, 177);
   font-family: serif;
   font-weight: 600;
   max-width: 120px;
   align-items: center;
   justify-content: center;
   right: 1rem;
-  background: rgba(158, 156, 156, 0.507);
+  background: rgba(119, 115, 115, 0.651);
   border: 0.1px solid rgb(177, 164, 153);
   border-radius: var(--thin-br-1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
@@ -408,7 +409,8 @@ body.dark-mode{
   max-width: 40%;
   height: 2.1rem;
   padding:  .4rem;
-  font-size: 1rem;
+  font-size: .9rem;
+    color: rgb(4, 235, 177);
   font-family: serif;
   font-weight: 600;
   max-width: 160px;
@@ -416,7 +418,7 @@ body.dark-mode{
   text-align: center;
   justify-content: center;
   left: 1rem;
-  background: rgba(143, 140, 140, 0.507);
+  background: rgba(119, 115, 115, 0.651);
   border: 0.1px solid rgb(177, 170, 165);
   border-radius: var(--thin-br-1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
