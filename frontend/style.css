@@ -199,6 +199,7 @@ body.dark-mode{
 .dark-mode .hero-section{
   background: rgb(255, 255, 255);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  height: 25rem;
 }
 
 .dark-mode .hero-section .trusted{
@@ -260,9 +261,9 @@ body.dark-mode{
 
 .dark-mode .order-status-container{
   background: white;
-  border: 1px solid white;
+  border: 1px solid rgb(207, 202, 202);
   border-radius: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -630,6 +631,8 @@ CARD BOTTOM
   cursor: pointer;
 }
 
+
+
 .navbar-section .nav-right{
   width: 100%;
   max-width: 50%;
@@ -657,8 +660,8 @@ CARD BOTTOM
 /***----HERO SECTION---***/
 .hero-section{
   width: 100%;
-  max-width: 480px;
-  height: 29rem;
+  max-width: 400px;
+  height: 25rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -667,11 +670,13 @@ CARD BOTTOM
   position: relative;
   justify-self: center;
   top: 4.1rem;
-  overflow: hidden;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-end-end-radius: var(--thin-br-1);
-  border-end-start-radius: var(--thin-br-1);
+}
+
+.dark-mode .hero-section{
+  border-bottom: 9px solid rgb(231, 223, 179);
+  height: 26rem;
 }
 
 
@@ -689,16 +694,18 @@ CARD BOTTOM
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: 1rem;
+  margin-top: .5rem;
   gap: .4rem;
   background-color: rgb(54, 59, 61);
   color: rgb(206, 200, 200);
   height: max-content;
-  padding: .4rem .5rem;
-  border-radius: var(--thin-br-1);
+  padding: .4rem 1rem;
+  border-radius: var(--thin-br-4);
   font-family: Arial;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  border-left: 6px solid rgba(247, 239, 170, 0.644);
+  border-right: 6px solid  rgba(247, 239, 170, 0.644);
 }
 
 .trusted img{
@@ -708,6 +715,7 @@ CARD BOTTOM
 
 .hero-section .cta-text{
   width: 100%;
+  display: flex;
   max-width: max-content;
   align-items: center;
   justify-content: center;
@@ -755,12 +763,12 @@ CARD BOTTOM
   position: relative;
   display: flex;
   text-align: center;
-  margin-bottom: .5rem;
+  margin-bottom: 5.rem;
 }
 
 .short-note p{
   font-size: var(--text-size-large);
-  color: var(--text-cl-3)
+  color: var(--text-cl-3);
 }
 
 .short-note strong{
@@ -769,42 +777,79 @@ CARD BOTTOM
 }
 
 /***--NETWORKS--***/
+.network-container{
+  width: 100%;
+  max-width: 400px;
+  height: 7rem;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5.5rem;
+}
+
+
 .networks{
   display: flex;
   width: 100%;
-  max-width: 100%;
-  height: 4rem;
+  border-radius: 1rem;
+  max-width: 94%;
+  margin-bottom: .5rem;
+  height: 7rem;
   background-color: var(--body-bg-cl-1);
   margin-top: .3rem;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  border: 0.1px solid var(--wht-thin-border-1);
- 
+  border: 0.1px solid rgb(76, 87, 26);
+  z-index: 10;
 }
 
 .networks .mtn{
   background: var(--nav-bg-cl-2);
   display: flex;
-  width: 7rem;
-  height: 2.2rem;
+  flex-direction: column;
+  width: 6rem;
+  height: 4.2rem;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
   color: rgb(119, 104, 63);
   font-size: var(--text-size-large); 
-  border-radius: var(--thin-br-4);
+  border-radius: var(--thin-br-2);
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(27, 26, 26, 0.6);
   border: 0.1px solid rgb(56, 51, 51);
 }
 
+.networks .mtn img{
+  width: 2rem;
+  height: 1.8rem;
+  animation:  pulse 3s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.03);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
 .networks .tel{
   background: var(--nav-bg-cl-2);
   display: flex;
-  width: 7rem;
-  height: 2.2rem;
+  flex-direction: column;
+  width: 6rem;
+  height: 4.2rem;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -817,22 +862,75 @@ CARD BOTTOM
   border: 0.1px solid rgb(56, 51, 51);
 }
 
+
+
+
+
+
+
+.networks .tel img{
+  width: 2rem;
+  height: 1.8rem;
+  animation:  pulse 4s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.03);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+
 .networks .tigo{
   background: var(--nav-bg-cl-2);
   display: flex;
-  width: 7rem;
-  height: 2.2rem;
+  flex-direction: column;
+  width: 6rem;
+  height: 4.2rem;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
   color: rgb(119, 140, 148);
   font-size: var(--text-size-large);
-  border-radius: var(--thin-br-4);
+  border-radius: var(--thin-br-2);
   box-shadow: 0 2px 6px rgba(31, 30, 30, 0.6);
   cursor: pointer;
   border: 0.1px solid rgb(56, 51, 51);
 }
+
+.networks .tigo img{
+  width: 2rem;
+  height: 1.8rem;
+  animation:  pulse 3s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.03);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+
+
 
 /****
 ORDER STATUS CHECKER
@@ -840,18 +938,18 @@ ORDER STATUS CHECKER
 .order-status-container{
   width: 100%;
   max-width: 470px;
-  height: 25.4rem;
+  height: 24rem;
   border-radius: 1rem;
   display: flex;
   background: var(--nav-bg-cl-2);
   border: 0.1px solid var(--wht-thin-border-1);
-  margin-top: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
   justify-content: center;
   align-items: center;
   justify-self: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /**--ORDER STAtUS ENDS--**/
@@ -956,6 +1054,7 @@ ORDER STATUS
   align-items: center;
   justify-content: center;
   gap: 1.6rem;
+  border-radius: 1rem;
   flex-direction: column;
   justify-self: center;
   background-color: var(--body-bg-cl-1);
@@ -1279,20 +1378,40 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 
 .buy-btn{
   width: 90%;
-  height: 60%;
+  height: 2rem;
   border-radius: var(--thin-br-2);
   border: none;
   background: var(--card-btn-bg-cl-6);
-  color: rgb(34, 25, 5);
-  font-weight: 500;
-  font-family: Arial;
+  color: rgb(56, 54, 54);
+  font-weight: 600;
+  font-size: .9rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
   transition: .1s ease-in-out;
   text-transform: capitalize;
 }
 
+.buy-btn img{
+width: 1.2rem;
+height: 1.2rem;
+animation: rotateLeft 3s linear infinite;
+}
+
+@keyframes rotateLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-15deg);
+  }
+}
+
 .buy-btn:hover{
   background-color:  #f09564;
-  font-weight: 600;
 }
 
 
@@ -1325,10 +1444,11 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 .modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
+  top: 0; 
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.1);
   justify-content: center;
   align-items: center;
   justify-self: center;
@@ -1348,10 +1468,8 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   align-items: center;
   justify-content: center;
   padding: 0 .5rem;
-  background: var(--nav-bg-cl-2);
-
-  border: 2px solid var(--wht-thin-border-1);
-  border-radius: var(--thin-br-2);
+  background: rgba(21, 100, 131, 0.527);
+  border-radius: 1rem;
   box-shadow: 0 2px 6px rgba(34, 33, 33, 0.8);
 }
 
@@ -1404,13 +1522,13 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   font-size: .9rem;
   font-family: serif;
   font-weight: 600;
-  color: rgb(4, 235, 177);
+  color: rgb(20, 201, 158);
   max-width: 120px;
   align-items: center;
   justify-content: center;
   right: 1rem;
-  background: rgba(119, 115, 115, 0.651);
-  border: 0.1px solid rgb(177, 164, 153);
+  background: rgba(32, 31, 31, 0.651);
+  border: 0.1px solid  rgb(80, 77, 76);
   border-radius: var(--thin-br-1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
 }
@@ -1422,15 +1540,15 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   height: 2rem;
   padding: .2rem .4rem;
   font-size: .9rem;
-  color: rgb(4, 235, 177);
+  color:rgb(20, 201, 158);
   font-family: serif;
   font-weight: 600;
   max-width: 160px;
   align-items: center;
   justify-content: center;
   left: 1rem;
-  background: rgba(119, 115, 115, 0.651);
-  border: 0.1px solid rgb(177, 170, 165);
+  background: rgba(32, 31, 31, 0.651);
+  border: 0.1px solid rgb(80, 77, 76);
   border-radius: var(--thin-br-1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -1443,7 +1561,7 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .modal-content {
-  background: var(--body-bg-cl-1);
+  background: rgb(15, 15, 15);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -1456,7 +1574,7 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   box-shadow: 0 10px 25px rgba(49, 47, 47, 0.3);
   text-align: center;
   animation: popUp 0.3s ease;
-  border: 1px solid rgba(105, 104, 102, 0.774);
+  border: 2px solid rgb(4, 104, 99);
 }
 
 .hintText{
@@ -1491,8 +1609,8 @@ justify-content: start;
 .input-image img{
   align-self: center;
   margin-bottom: 1rem;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: var(--thin-br-2);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
@@ -1507,7 +1625,7 @@ justify-content: start;
   justify-self: start;
   padding: 8px;
   color: rgb(223, 216, 216);
-  border: 1px solid rgb(68, 66, 66);
+  border: 1.3px solid rgb(155, 150, 150);
   border-radius: var(--thin-br-1);
   font-size: 1.3rem;
   text-align: center;
@@ -1531,12 +1649,12 @@ justify-content: start;
   display: flex;
   width: 100%;
   max-width: 420px;
-  height: 5rem;
+  height: 4rem;
   background-color: rgba(59, 56, 56, 0.253);
   border-radius: 6px;
   padding: .9rem 1.1rem;
   align-items: center;
-  border: 2px solid var(--thin-border);
+  border: 1px solid rgb(44, 44, 44);
   justify-content: space-between;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   gap: 1.5rem;
@@ -1557,10 +1675,14 @@ justify-content: start;
 .modal-buttons .cancel {
   width: 100%;
   max-width: 150px;
-  height: 2.4rem;
+  height: 2.2rem;
   background: #726f6f;
-  font-size: 1.08rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: Arial;
+  text-align: center;
   color: var(--text-cl-2);
   border: 1px solid var(--text-cl-3);
   box-shadow:  0 2px 6px rgba(66, 65, 65, 0.2);
@@ -1570,13 +1692,13 @@ justify-content: start;
   width: 100%;
   max-width: 150px;
   padding: 0 .8rem;
-  height: 2.8rem;
+  height: 2.2rem;
   display: flex;
-  border: 2px solid var(--thin-border-1);
+  border: 2px solid rgb(4, 92, 58);
   align-items: center;
   justify-content: center;
   background: #087c69;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: Arial;
   color: wheat;
   box-shadow:  0 2px 6px rgba(70, 69, 69, 0.2);
@@ -1692,25 +1814,24 @@ DISPLAY NONE
   height: 30rem;
   display: flex;
   top: 4.1rem;
-  border-radius: 0;
-  margin-left: .6rem;
+  margin: 0;
   justify-self: center;
 }
 
 
 .dark-mode .networks{
   display: flex;
-  border-radius: none;
-  height: 4rem;
+
 }
 
 
 
 .hero-section{
   border-radius: 0 !important;
-  height: 31.5rem !important;
-  border: none !important;
-  margin-left: .6rem;
+  height: 27.5rem !important;
+  border-end-end-radius: 2rem !important;
+  border-end-start-radius: 2rem !important;
+  border-bottom: 6px solid  rgba(236, 231, 148, 0.308);
 }
 
 
@@ -1727,6 +1848,7 @@ DISPLAY NONE
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: .5rem !important;
 }
 /****
 ORDER STATUS CHECKER
@@ -1837,12 +1959,11 @@ MAIN SECTION
   width: 100%;
   max-width: 98%;
   display: grid;
-  gap: .8rem;
+  gap: 1.6rem;
   grid-template-columns: repeat(2,1fr) !important;
   justify-content: center;
   align-items: center;
   justify-self: center;
-  margin-left: 18.3rem;
 }
 
 .dark-mode .main-section .card-container{
@@ -1850,7 +1971,7 @@ MAIN SECTION
   max-width: 98%;
   display: grid;
   margin: 0 !important;
-  gap: 1rem;
+  gap: 1.6rem;
   justify-self: center;
   justify-content: center;
   align-items: center;
@@ -1859,15 +1980,15 @@ MAIN SECTION
 
 /***--CARD-DIV--**/
 .card-div{
-  width: 11rem !important;
-  height: 17rem;
+  width: 10.5rem !important;
+  height: 16rem;
   display: flex;
 }
 
 .dark-mode .card-div{
-  width: 11rem !important;
+  width: 10.5rem !important;
   display: flex;
-  height: 17rem;
+  height: 16rem;
 }
 
 .foot{
@@ -1935,16 +2056,14 @@ SNACKBAR SECTION
 
 
 
-/****
-LAPTOP UI
-*****/
-@media (max-width: 1366px) {
 
+@media (min-width: 1366px) {
 
   /****
   display none div @1366px
   ****/
-  .nav-right .login{
+  .nav-right .login,
+  .network-container{
     display: none;
   }
 /****
@@ -2179,12 +2298,26 @@ SIDEBAR-ENDS
     max-width: 1040px;
     justify-self: end;
     margin-right: .6rem;
+    margin-bottom: .8rem;
     box-shadow: 0 2px 6px rgba(15, 15, 15, 0.8);
-    border-bottom: 2px solid var(--wht-thin-border-1);
+    border-bottom: 9px solid rgba(236, 231, 148, 0.308);
+  }
+
+  .hero-section .trusted{
+    padding: .8rem
   }
 
   .dark-mode .hero-section {
-    border-bottom: 1px solid rgb(214, 206, 206);
+    border-bottom: 9px solid rgb(245, 240, 175);
+    height: 25rem !important;
+  }
+
+  .hero-section .short-note p{
+    margin-bottom: 1.2rem;
+  }
+
+  .dark-mode .short-note p{
+    margin-bottom: 1.8rem;
   }
 
   .networks{
@@ -2210,7 +2343,7 @@ SIDEBAR-ENDS
    justify-content: center;
    align-content: center;
    justify-items: center;
-   margin-top: 5rem;
+   margin-top: 6rem;
    margin-right: .5rem;
    border-radius: 1.2rem;
   }
@@ -2229,6 +2362,7 @@ SIDEBAR-ENDS
     display: flex;
     align-items: start;
     position: relative;
+    margin-bottom: 5.5rem;
     padding: .3rem;
   }
 .dark-mode .network-badge {
@@ -2437,7 +2571,6 @@ BOTTOM SECTION
   width: 12.3rem;
   height: 18rem
 }
-
 
 
 }
