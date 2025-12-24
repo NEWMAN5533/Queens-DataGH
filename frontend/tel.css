@@ -913,6 +913,24 @@ body{
   border: 0.1px solid  rgba(233, 185, 203, 0.562);
   z-index: 10;
 }
+.dark-mode .networks .mtn{
+  color: rgb(53, 45, 45);
+}
+
+.dark-mode .networks .tel{
+  color: rgb(53, 45, 45);
+}
+
+.dark-mode .networks .tigo{
+   color: rgb(53, 45, 45);
+}
+
+.networks .mtn img{
+  width: 2rem;
+  height: 1.8rem;
+  animation:  pulse 3s ease infinite;
+}
+
 
 
 .networks .mtn{
@@ -925,7 +943,7 @@ body{
   justify-content: center;
   text-align: center;
   position: relative;
-  color: rgb(53, 45, 45);
+  color: rgb(230, 221, 221);
   font-weight: 600;
   opacity: .8;
   font-size: var(--text-size-small);
@@ -967,7 +985,7 @@ body{
   justify-content: center;
   text-align: center;
   position: relative;
-  color: rgb(53, 45, 45);
+  color: rgb(226, 209, 209);
   font-weight: 600;
   opacity: .8;
   font-size: var(--text-size-small);
@@ -1009,7 +1027,7 @@ body{
   justify-content: center;
   text-align: center;
   position: relative;
-  color: rgb(53, 45, 45);
+  color: rgb(226, 209, 209);
   font-weight: 600;
   opacity: .8;
   font-size: var(--text-size-small);
@@ -1389,7 +1407,7 @@ DISPLAY NONE
 
 .hero-section{
   border-radius: 0 !important;
-  height: 25.5rem !important;
+  height: 26rem !important;
   border-end-end-radius: 2rem !important;
   border-end-start-radius: 2rem !important;
   margin: 0 !important;
@@ -1402,7 +1420,7 @@ DISPLAY NONE
 
 .hero-section .trusted{
   width: 100%;
-  max-width: 370px;
+  max-width: 300px;
   text-align: center;
   display: flex;
   padding: .3rem !important;
