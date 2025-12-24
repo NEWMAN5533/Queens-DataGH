@@ -763,7 +763,7 @@ body{
 .hero-section{
   width: 100%;
   max-width: 479px;
-  height: 29rem;
+  height: 25.5rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -792,6 +792,7 @@ body{
   padding: .4rem .5rem;
   border-radius: var(--thin-br-3);
   font-family: Arial;
+  font-size: .9rem;
   font-weight: 600;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   border-left: 6px solid rgb(241, 189, 189);
@@ -815,7 +816,7 @@ body{
 
 .cta-text h2{
   color: rgb(134, 124, 124);
-  font-size: var(--text-size-larger);
+  font-size: 1rem;
   font-weight: 600;
   font-family: Arial;
   word-spacing: normal;
@@ -858,7 +859,7 @@ body{
 }
 
 .short-note p{
-  font-size: var(--text-size-large);
+  font-size: .9rem;
   color: var(--text-cl-3)
 }
 
@@ -924,8 +925,10 @@ body{
   justify-content: center;
   text-align: center;
   position: relative;
-  color: rgb(119, 104, 63);
-  font-size: var(--text-size-large); 
+  color: rgb(53, 45, 45);
+  font-weight: 600;
+  opacity: .8;
+  font-size: var(--text-size-small);
   border-radius: var(--thin-br-2);
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(27, 26, 26, 0.6);
@@ -964,8 +967,10 @@ body{
   justify-content: center;
   text-align: center;
   position: relative;
-  color: rgb(151, 88, 112);
-  font-size: var(--text-size-large);
+  color: rgb(53, 45, 45);
+  font-weight: 600;
+  opacity: .8;
+  font-size: var(--text-size-small);
   border-radius: var(--thin-br-4);
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(26, 24, 24, 0.6);
@@ -1004,8 +1009,10 @@ body{
   justify-content: center;
   text-align: center;
   position: relative;
-  color: rgb(119, 140, 148);
-  font-size: var(--text-size-large);
+  color: rgb(53, 45, 45);
+  font-weight: 600;
+  opacity: .8;
+  font-size: var(--text-size-small);
   border-radius: var(--thin-br-2);
   box-shadow: 0 2px 6px rgba(31, 30, 30, 0.6);
   cursor: pointer;
@@ -1382,7 +1389,7 @@ DISPLAY NONE
 
 .hero-section{
   border-radius: 0 !important;
-  height: 27.5rem !important;
+  height: 25.5rem !important;
   border-end-end-radius: 2rem !important;
   border-end-start-radius: 2rem !important;
   margin: 0 !important;
