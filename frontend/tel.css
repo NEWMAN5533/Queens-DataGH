@@ -768,7 +768,6 @@ body{
   align-items: center;
   flex-direction: column;
   gap: .6rem;
-  background: var(--nav-bg-cl-2);
   position: relative;
   justify-self: center;
   top: 4.1rem;

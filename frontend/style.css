@@ -208,7 +208,11 @@ body.dark-mode{
 
 
 .dark-mode .hero-section{
-  background: rgb(255, 255, 255);
+  background: url(./images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   height: 25rem;
 }
@@ -227,20 +231,18 @@ body.dark-mode{
   border: none;
 }
 
-.dark-mode .queen img{
-  border: 1px solid rgb(163, 160, 160);
-}
+
 
 .dark-mode .user-info p{
   color: rgb(31, 29, 29);
 }
 
 .dark-mode .short-note p{
-  color: rgb(36, 34, 16);
+  color: rgb(255, 255, 255);
 }
 
 .dark-mode .short-note strong{
-  color: rgb(124, 114, 27);
+  color: rgb(19, 17, 5);
 }
 
 .dark-mode .networks{
@@ -676,18 +678,24 @@ CARD BOTTOM
   height: 23rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column;
   gap: .5rem;
-  background: var(--nav-bg-cl-2);
+  background: url(./images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   justify-self: center;
+  overflow: hidden;
   top: 4.1rem;
   margin-bottom: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-bottom: 9px solid rgb(126, 125, 118) !important;
 }
 
 .dark-mode .hero-section{
-  border-bottom: 9px solid rgb(231, 223, 179);
+  border-bottom: 9px solid rgb(231, 223, 179) !important;
   height: 26rem;
 }
 
@@ -708,22 +716,22 @@ CARD BOTTOM
   position: relative;
   margin-top: .5rem;
   gap: .4rem;
-  background-color: rgb(54, 59, 61);
+  background-color: rgb(61, 53, 53);
   color: rgb(206, 200, 200);
   height: max-content;
   padding: .4rem 1rem;
-  border-radius: var(--thin-br-4);
+  border-radius: var(--thin-br-3);
   font-family: Arial;
   font-size: .9rem;
   font-weight: 600;
   box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-  border-left: 6px solid rgba(247, 239, 170, 0.644);
-  border-right: 6px solid  rgba(247, 239, 170, 0.644);
+  border-left: 5px solid rgba(233, 212, 28, 0.945);
+  border-right: 5px solid  rgba(212, 196, 44, 0.644);
 }
 
 .trusted img{
-  width: 2.2rem;
-  height: 1.2rem;
+  width: 2.6rem;
+  height: 1.6rem;
 }
 
 .hero-section .cta-text{
@@ -737,16 +745,19 @@ CARD BOTTOM
 }
 
 .cta-text h2{
-    color: rgb(134, 124, 124);
+  color: rgb(31, 122, 95);
   font-size: 1rem;
   font-weight: 600;
   font-family: Arial;
   word-spacing: normal;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   padding: .1rem .6rem;
-  background: var(--body-bg-cl-1);
-  margin-bottom: 2rem;
-  border: 0.1px solid var(--wht-thin-border-1);
+  background: var(--body-bg-cl-2);
+  margin-top: -1rem;
+  margin-right: 7.5rem;
+  border: 0.1px solid var(--wht-thin-border-2);
+  border-end-end-radius: 1rem;
+  border-start-start-radius: 1rem;
 }
 
 .hero-section .queen{
@@ -763,8 +774,19 @@ CARD BOTTOM
 .queen img{
   height: 8rem;
   width: 6rem;
-  border: 0.1px solid var(--wht-thin-border-1);
+ 
   border-radius: 50%;
+  animation: translateX 5s infinite;
+}
+
+@keyframes translateX {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(15deg);
+  }
 }
 
 .hero-section .short-note{
@@ -781,12 +803,13 @@ CARD BOTTOM
 
 .short-note p{
   font-size: var(--text-size-small);
-  color: var(--text-cl-3);
+  color: white;
+  font-weight: 600;
 }
 
 .short-note strong{
   font-size: var(--text-size-larger);
-  color: #929F33;
+  color: #131006;
 }
 
 /***--NETWORKS--***/
@@ -1468,7 +1491,15 @@ animation: rotateLeft 3s linear infinite;
   font-size: 1.2rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 600;
-  color: rgb(226, 218, 218);
+  color: rgb(255, 254, 253);
+  text-align:center;
+}
+
+.dark-mode .user-info p{
+    font-size: 1.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  color: rgb(255, 254, 253);
   text-align:center;
 }
 
