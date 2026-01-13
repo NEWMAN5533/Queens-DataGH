@@ -627,7 +627,7 @@ CARD BOTTOM
 
 .navbar-section .nav-left{
   width: 100%;
-  width: 50%;
+  width: 30%;
   height: 100%;
   display: flex;
   position: relative;
@@ -648,18 +648,39 @@ CARD BOTTOM
 
 .navbar-section .nav-right{
   width: 100%;
-  max-width: 50%;
+  max-width: 70%;
   height: 100%;
+  gap: .3rem;
   display: flex;
   position: relative;
-  justify-content: end;
+  justify-content: center;
   align-content: center;
   align-items: center;
 }
 
+.nav-right .btn-terms{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  text-align: center;
+  padding: .2rem;
+  border-radius: 1rem;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  margin-right: 1.3rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-terms a{
+  text-decoration: none;
+  color: rgb(175, 136, 27);
+  font-size: .7rem;
+  cursor: pointer;
+}
+
 .login {
   width: 6rem;
-  margin-left: -.8rem;
   height: 1.9rem;
   background-color: rgb(97, 61, 11);
   border-radius: 2px;
